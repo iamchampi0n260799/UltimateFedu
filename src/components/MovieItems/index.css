@@ -1,0 +1,61 @@
+
+img{
+    width: 250px;
+    height: 150px;
+    border-radius: 4px;
+}
+.fa.fa-star{
+    margin-right: 5px;
+    color: rgb(255, 208, 0);
+}
+.price{
+        font-weight: 600;
+}
+.card-body{
+    margin: 0px;
+    padding: 10px 0px;
+
+}
+.del{
+    font-weight: 300;
+}
+.activeHover{
+    position: absolute;
+    top: 0px;
+    display: none;
+    background-color: white;
+    width: 288px;
+    height: 365px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.card , .activeHover{
+    transition: all 2s;
+}
+.card:hover + .activeHover{
+    display: block;
+}
+
+.bestseller{
+    border-radius: 5px;
+    background-color: rgb(200, 255, 0);
+    color: white;
+    padding: 5px;
+
+}
+
+
+
+.cardItems-image img{
+    width: 100%;
+}
+.MuiPaper-root.MuiPaper-elevation1.MuiPaper-rounded{
+    box-shadow: none;
+    
+}
+.MuiButton-label{
+    padding: 5px;
+    border-radius: 4px;
+    
+    color: rgb(16, 19, 9);
+}

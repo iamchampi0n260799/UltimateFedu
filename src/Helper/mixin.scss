@@ -1,0 +1,30 @@
+@mixin styleText($color , $fs , $fw){
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin stylePaddingMargin($pd , $mg){
+    padding: $pd;
+    margin: $mg;
+}
+@mixin styleButton($bg-color , $bd-color , $bd-radius ,$pdX , $pdY){
+    background-color: $bg-color;
+    border: 1px solid $bd-color;
+    border-radius: $bd-radius;
+    padding: $pdX $pdY;
+}
+@mixin styleHoverButton($bg-color , $color , $bd-color){
+    background-color: $bg-color;
+    color: $color;
+    border-color: $bd-color;
+}
+@mixin responsive($screen){
+    @if(map-has-key($map: $breakpoints, $key: $screen)){
+        $value:map-get($map: $breakpoints, $key: $screen);
+        @media screen and(max-width: $value){ 
+            @content;
+        }
+    }@else{
+        @warn 'Doesnot exists'
+    }
+}
