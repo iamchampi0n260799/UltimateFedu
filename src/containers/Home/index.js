@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import Template from './Template'
+import Template from '../Home/components/Template'
 export default class index extends Component {
     render() {
         return (
             <Template>
-                <Route 
+                <Route
                     path={this.props.path}
                     component={this.props.component}
                     exact={this.props.exact}
