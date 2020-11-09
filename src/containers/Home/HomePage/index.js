@@ -12,15 +12,19 @@ class index extends Component {
     this.props.getCourse();
   }
   renderCourse = () => {
-    const { data } = this.props;
+    let { data , searchTerm} = this.props;
+   
     if (data) {
+      data = data.filter((data) => {
+        return data.tenKhoaHoc.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+      })
       return data.map((course, index) => (
         <MovieItems key={index} course={course} />
       ));
     }
   };
   render() {
-    const { loading } = this.props;
+    const { loading} = this.props;
     if (loading) {
       return <Loader />;
     }
@@ -39,6 +43,7 @@ const mapStateToProps = (state) => {
     loading: state.courseReducer.loading,
     data: state.courseReducer.data,
     error: state.courseReducer.error,
+    searchTerm: state.courseReducer.searchTerm,
   };
 };
 const mapDispatchToProps = (dispatch) => {

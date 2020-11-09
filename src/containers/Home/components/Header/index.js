@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import axios from "axios";
+import Search from "../../../../components/Search";
 class index extends Component {
   constructor(props) {
     super(props);
@@ -26,11 +27,13 @@ class index extends Component {
   };
   renderCategoies = () => {
     return this.state.categories.map((item, index) => (
-      <a 
-      style={{cursor: "pointer"}}
-      key={index} 
-      onClick={() => {this.handleClickToPush(item.maDanhMuc)}} 
-      className="dropdown-item"
+      <a
+        style={{ cursor: "pointer" }}
+        key={index}
+        onClick={() => {
+          this.handleClickToPush(item.maDanhMuc);
+        }}
+        className="dropdown-item"
       >
         {item.tenDanhMuc}
       </a>
@@ -86,20 +89,7 @@ class index extends Component {
                 <a className="nav-link disabled">Disabled</a>
               </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
+            <Search />
           </div>
         </nav>
       </div>
