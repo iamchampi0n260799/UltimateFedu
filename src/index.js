@@ -12,7 +12,8 @@ import App from './App';
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import root from "./reducers";
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+
 const enhance = compose(
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

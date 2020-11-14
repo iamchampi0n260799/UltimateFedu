@@ -6,11 +6,17 @@ import MovieItems from "../../../components/MovieItems";
 import Loader from "../../../components/Loader";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import CourseCarousel from "../components/CourseCarousel";
+import Reasons from "../components/Reasons";
+import Categories from "../components/Categories";
+import Numbers from "../components/Numbers";
+import Feedback from "../components/Feedback";
 
 class index extends Component {
   componentDidMount() {
     this.props.getCourse();
   }
+
   renderCourse = () => {
     const { data } = this.props;
     if (data) {
@@ -19,18 +25,26 @@ class index extends Component {
       ));
     }
   };
+
   render() {
     const { loading } = this.props;
     if (loading) {
       return <Loader />;
     }
     return (
-      <div className="container-fluid coursesContent">
-        <h3>Students are watching:</h3>
-        <Grid container spaceing={3}>
-          {this.renderCourse()}
-        </Grid>
-      </div>
+      <>
+        <CourseCarousel />
+        <Reasons />
+        <Categories />
+        <section className="container-fluid coursesContent">
+          <h3>Students are watching:</h3>
+          <Grid container spaceing={3}>
+            {this.renderCourse()}
+          </Grid>
+        </section>
+        <Numbers />
+        <Feedback />
+      </>
     );
   }
 }

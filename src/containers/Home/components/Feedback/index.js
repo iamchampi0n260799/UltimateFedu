@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./feedback.css";
+import "./../../../../styles/sass/main.scss";
 
 export default class Feedback extends Component {
     render() {
@@ -23,7 +23,7 @@ export default class Feedback extends Component {
                                                         lòng với công việc hiện tại của tôi tại Global
                                                         CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
                                                         nhờ các khóa học chuyên sâu tại CyberSoft."
-                    </p>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div className="card">
@@ -49,7 +49,7 @@ export default class Feedback extends Component {
                                                         ngành xây dựng, tôi đã thấy mình không phù hợp. Tôi đã
                                                         tìm đến với CyberSoft và nay tôi đã có được công việc
                                                         đúng mong đợi của mình tại Viivue"
-                    </p>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div className="card">

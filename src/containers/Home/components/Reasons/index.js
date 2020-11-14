@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import "./reasons.css";
+// import "./../../styles/sass/main.scss";
+import "./../../../../styles/sass/main.scss";
 
 export default class Reasons extends Component {
     render() {

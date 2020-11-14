@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./numbers.css";
+import "./../../../../styles/sass/main.scss";
 
 export default class Numbers extends Component {
     render() {

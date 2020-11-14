@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import Template from '../Home/components/Template'
+import Template from '../Home/components/Template';
+
 export default class index extends Component {
     render() {
         return (
