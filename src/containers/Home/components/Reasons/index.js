@@ -5,11 +5,11 @@ import Slider from "react-slick";
 export default class Reasons extends Component {
     render() {
         const settings = {
-            dots: true,
-            infinite: false,
+            dots: false,
+            infinite: true,
             speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToShow: 1,
+            slidesToScroll: 1,
             initialSlide: 0,
             responsive: [
                 {
@@ -18,7 +18,7 @@ export default class Reasons extends Component {
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         infinite: true,
-                        dots: true
+                        dots: false
                     }
                 },
                 {
@@ -42,7 +42,6 @@ export default class Reasons extends Component {
         return (
             <section className="reasons">
                 <div className="reasons__list">
-
                     <div className="reasons__title">
                         <div>
                             <h1>Điểm ưu việt</h1>
@@ -55,13 +54,13 @@ export default class Reasons extends Component {
                             <p>Học theo lộ trình, có định hướng</p>
                         </div>
                         <div className="reasons__image">
-                            <Slider {...settings}>
-                                <div className="reasons__slider">
-                                    <img src="./images/reasons_1.jpg" alt />
-                                    <img src="./images/reasons_3.jpg" alt />
-                                    <img src="./images/reasons_5.jpg" alt />
-                                </div>
-                            </Slider>
+
+                            <div className="reasons__slider">
+                                <img src="./images/reasons_1.jpg" alt />
+                                <img src="./images/reasons_3.jpg" alt />
+                                <img src="./images/reasons_5.jpg" alt />
+                            </div>
+
 
                         </div>
                     </div>
