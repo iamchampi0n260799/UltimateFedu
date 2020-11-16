@@ -7,8 +7,8 @@ export default class CourseCarousel extends Component {
         return (
             <section className="courseCarousel">
                 <div className="courseCarousel__content">
-                    <h1 className="courseCarousel__title">HỌC VIỆN CYBERSOFT CHUYÊN ĐÀO TẠO</h1>
-                    <span className="display-3">LẬP TRÌNH FRONT END</span>
+                    <h1 className="courseCarousel__title">HỌC VIỆN CYBERSOFT</h1>
+                    <span className="display-3">CHUYÊN ĐÀO TẠO LẬP TRÌNH FRONT END</span>
                     <p>HỌC THỰC TẾ - LÀM CỰC DỄ</p>
                     <Link to="/courses" className="courseCarousel__link">Xem Thêm</Link>
                 </div>

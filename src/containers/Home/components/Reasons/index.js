@@ -1,45 +1,62 @@
 import React, { Component } from 'react'
 import "./../../../../styles/sass/main.scss";
-import Slider from "react-slick";
 import ReasonItem from "../ReasonItem";
 
 export default class Reasons extends Component {
-    render() {
-        const settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            initialSlide: 0,
-            responsive: [
+    constructor(props) {
+        super(props);
+        this.state = {
+            slides: [
                 {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
+                    id: "01",
+                    title: "Học theo lộ trình, có định hướng",
+                    img1: "./images/reasons_1.jpg",
+                    img2: "./images/reasons_2.jpg",
+                    img3: "././images/reasons_3.jpg",
+                    styleItem: "reasons__one",
+                    styleTitle: ""
                 },
                 {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        initialSlide: 1
-                    }
+                    id: "02",
+                    title: "Nền tảng, tư duy, cốt lõi trong lập trình",
+                    img1: "./images/reasons_1.jpg",
+                    img2: "./images/reasons_2.jpg",
+                    img3: "././images/reasons_3.jpg",
+                    styleItem: "reasons__two",
+                    styleTitle: "reasons__single"
                 },
                 {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
+                    id: "03",
+                    title: "Mài giũa bạn qua kinh nghiệm, dự án thực tế",
+                    img1: "./images/reasons_1.jpg",
+                    img2: "./images/reasons_2.jpg",
+                    img3: "././images/reasons_3.jpg",
+                    styleItem: "reasons__three",
+                    styleTitle: ""
+                },
+                {
+                    id: "04",
+                    title: "Teamwork, Scrum - Agile. Mentor tận tâm",
+                    img1: "./images/reasons_1.jpg",
+                    img2: "./images/reasons_2.jpg",
+                    img3: "././images/reasons_3.jpg",
+                    styleItem: "reasons__four",
+                    styleTitle: ""
+                },
+                {
+                    id: "05",
+                    title: "Công nghệ mới, chuyên sâu, thực tế",
+                    img1: "./images/reasons_1.jpg",
+                    img2: "./images/reasons_2.jpg",
+                    img3: "././images/reasons_3.jpg",
+                    styleItem: "reasons__five",
+                    styleTitle: "reasons__single"
+                },
+            ],
         };
+    }
 
+    render() {
         return (
             <section className="reasons">
                 <div className="reasons__list">
@@ -49,74 +66,12 @@ export default class Reasons extends Component {
                             <p>CHỈ CÓ TẠI CYBERSOFT</p>
                         </div>
                     </div>
-                    {/* <div className="reasons__item">
-                        <div className="reasons__one reasons__info">
-                            <h1>01</h1>
-                            <p>Học theo lộ trình, có định hướng</p>
-                        </div>
-                        <div className="reasons__image">
-                            <div className="reasons__slider">
-                                <img src="./images/reasons_1.jpg" alt />
-                                <img src="./images/reasons_3.jpg" alt />
-                                <img src="./images/reasons_5.jpg" alt />
-                            </div>
-                        </div>
-                    </div> */}
-                    <ReasonItem />
-                    <ReasonItem />
 
-                    <div className="reasons__item reasons__single">
-                        <div className="reasons__two reasons__info">
-                            <h1>02</h1>
-                            <p>Nền tảng, tư duy, cốt lõi trong lập trình</p>
-                        </div>
-                        <div className="reasons__image">
-                            <div className="reasons__slider owl-carousel owl-theme">
-                                <img src="./images/reasons_1.jpg" alt />
-                                <img src="./images/reasons_3.jpg" alt />
-                                <img src="./images/reasons_5.jpg" alt />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="reasons__item">
-                        <div className="reasons__three reasons__info">
-                            <h1>03</h1>
-                            <p>Mài giũa bạn qua kinh nghiệm, dự án thực tế</p>
-                        </div>
-                        <div className="reasons__image">
-                            <div className="reasons__slider owl-carousel owl-theme">
-                                <img src="./images/reasons_1.jpg" alt />
-                                <img src="./images/reasons_3.jpg" alt />
-                                <img src="./images/reasons_5.jpg" alt />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="reasons__item">
-                        <div className="reasons__four reasons__info">
-                            <h1>04</h1>
-                            <p>Teamwork, Scrum - Agile. Mentor tận tâm</p>
-                        </div>
-                        <div className="reasons__image">
-                            <div className="reasons__slider owl-carousel owl-theme">
-                                <img src="./images/reasons_1.jpg" alt />
-                                <img src="./images/reasons_3.jpg" alt />
-                                <img src="./images/reasons_5.jpg" alt />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="reasons__item reasons__single">
-                        <div className="reasons__five reasons__info">
-                            <h1>05</h1>
-                            <p>Công nghệ mới, chuyên sâu, thực tế</p>
-                        </div>
-                        <div className="reasons__image">
-                            <div className="reasons__slider owl-carousel owl-theme">
-                                <img src="./images/reasons_1.jpg" alt />
-                                <img src="./images/reasons_3.jpg" alt />
-                                <img src="./images/reasons_5.jpg" alt />
-                            </div>
-                        </div>
-                    </div>
+                    {this.state.slides.map(function (slide, index) {
+                        return (
+                            <ReasonItem reason={slide} key={slide.id} />
+                        );
+                    })}
                 </div>
             </section>
 

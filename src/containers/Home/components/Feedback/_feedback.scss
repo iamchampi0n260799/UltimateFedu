@@ -1,15 +1,12 @@
 .feedback {
-    background-color: #f2ede6;
+    background-color: #eeeeee;
     padding: 70px;
     text-align: center;
 
     .feedback__content {
         h2 {
             @include styleText($color-black-1, 40px, $fw-bold);
-            // color: black;
-            // font-size: 40px;
-            // font-weight: bold;
-            margin-bottom: 40px;
+            // margin-bottom: 40px;
         }
 
         // .feedback__tab {
@@ -47,13 +44,13 @@
                 align-items: center;
                 justify-content: center;
                 overflow: hidden;
-                background-color: #f2ede6;
+                background-color: #eeeeee;
                 border: none;
                 padding: 20px;
 
                 img {
-                    width: 200px;
-                    height: 200px;
+                    width: 250px;
+                    height: 250px;
                     border-radius: 50%;
                 }
 
@@ -61,7 +58,7 @@
                     text-align: center;
                     height: 120px;
                     padding: 10px 0;
-                    width: 50%;
+                    width: 70%;
                     position: relative;
                     transform: translateX(-50%);
                     left: 50%;

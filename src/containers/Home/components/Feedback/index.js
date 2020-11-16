@@ -3,22 +3,68 @@ import "../../../../styles/sass/main.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FeedbackItem from "../FeedbackItem"
 
 export default class Feedback extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            feedbacks: [
+                {
+                    id: "01",
+                    name: "Nguyễn Quốc",
+                    major: "Học viên chuyển ngành",
+                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+                    img: "./images/hocvientieubieu-01.jpg",
+                },
+                {
+                    id: "02",
+                    name: "Nguyễn Quốc",
+                    major: "Học viên chuyển ngành",
+                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+                    img: "./images/hocvientieubieu-02.jpg",
+                },
+                {
+                    id: "03",
+                    name: "Nguyễn Quốc",
+                    major: "Học viên chuyển ngành",
+                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+                    img: "./images/hocvientieubieu-03.jpg",
+                },
+                {
+                    id: "04",
+                    name: "Nguyễn Quốc",
+                    major: "Học viên chuyển ngành",
+                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+                    img: "./images/hocvientieubieu-01.jpg",
+                },
+                {
+                    id: "05",
+                    name: "Nguyễn Quốc",
+                    major: "Học viên chuyển ngành",
+                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+                    img: "./images/hocvientieubieu-01.jpg",
+                },
+            ],
+        };
+    }
+
     render() {
         const settings = {
             dots: true,
             infinite: true,
             speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
+            slidesToShow: 3,
+            slidesToScroll: 3,
             initialSlide: 0,
+            autoplay: true,
+            autoplaySpeed: 2000,
             responsive: [
                 {
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
                         infinite: true,
                         dots: true
                     }
@@ -47,7 +93,12 @@ export default class Feedback extends Component {
                     <div className="row">
                         <div className="col-md-12">
                             <Slider {...settings}>
-                                <div className="feedback__item">
+                                {this.state.feedbacks.map(function (feedback) {
+                                    return (
+                                        <FeedbackItem feedback={feedback} key={feedback.id} />
+                                    );
+                                })}
+                                {/* <div className="feedback__item">
                                     <div className="card">
                                         <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
                                         <div className="card-body">
@@ -91,7 +142,7 @@ export default class Feedback extends Component {
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </Slider>
                             {/* <div className="feedback__tab">
                                 <div className="tab-content" id="feedbackTabContent">
