@@ -1,15 +1,99 @@
 import React, { Component } from 'react'
-import "./../../../../styles/sass/main.scss";
+import "../../../../styles/sass/main.scss";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default class Feedback extends Component {
     render() {
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 0,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        initialSlide: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        };
         return (
             <section className="feedback">
                 <div className="feedback__content container">
                     <h2>Học Viên Tiêu Biểu</h2>
                     <div className="row">
                         <div className="col-md-12">
-                            <div className="feedback__tab">
+                            <Slider {...settings}>
+                                <div className="feedback__item">
+                                    <div className="card">
+                                        <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
+                                        <div className="card-body">
+                                            <h4 className="card-title">Nguyễn Quốc</h4>
+                                            <p className="card-text">Học viên chuyển ngành</p>
+                                            <p className="card-text feedback__item__content">
+                                                Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
+                                                lòng với công việc hiện tại của tôi tại Global
+                                                CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
+                                                nhờ các khóa học chuyên sâu tại CyberSoft."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="feedback__item">
+                                    <div className="card">
+                                        <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
+                                        <div className="card-body">
+                                            <h4 className="card-title">Nguyễn Quốc</h4>
+                                            <p className="card-text">Học viên chuyển ngành</p>
+                                            <p className="card-text feedback__item__content">
+                                                Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
+                                                lòng với công việc hiện tại của tôi tại Global
+                                                CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
+                                                nhờ các khóa học chuyên sâu tại CyberSoft."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="feedback__item">
+                                    <div className="card">
+                                        <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
+                                        <div className="card-body">
+                                            <h4 className="card-title">Nguyễn Quốc</h4>
+                                            <p className="card-text">Học viên chuyển ngành</p>
+                                            <p className="card-text feedback__item__content">
+                                                Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
+                                                lòng với công việc hiện tại của tôi tại Global
+                                                CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
+                                                nhờ các khóa học chuyên sâu tại CyberSoft."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Slider>
+                            {/* <div className="feedback__tab">
                                 <div className="tab-content" id="feedbackTabContent">
                                     <div className="tab-pane fade show active" id="workers" role="tabpanel">
                                         <div className="feedback__item owl-carousel owl-theme">
@@ -166,7 +250,7 @@ export default class Feedback extends Component {
                                         <a className="nav-link" id="facebooks-tab" data-toggle="tab" href="#facebooks" role="tab">Nhận xét trên Facebook</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

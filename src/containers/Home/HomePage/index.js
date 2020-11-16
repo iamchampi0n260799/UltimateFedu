@@ -18,8 +18,8 @@ class index extends Component {
   }
 
   renderCourse = () => {
-    let { data , searchTerm} = this.props;
-   
+    let { data, searchTerm } = this.props;
+
     if (data) {
       data = data.filter((data) => {
         return data.tenKhoaHoc.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
@@ -31,7 +31,7 @@ class index extends Component {
   };
 
   render() {
-    const { loading} = this.props;
+    const { loading } = this.props;
     if (loading) {
       return <Loader />;
     }
@@ -39,7 +39,7 @@ class index extends Component {
       <>
         <CourseCarousel />
         <Reasons />
-        <Categories />
+        {/* <Categories /> */}
         <section className="container-fluid coursesContent">
           <h3>Students are watching:</h3>
           <Grid container spaceing={3}>

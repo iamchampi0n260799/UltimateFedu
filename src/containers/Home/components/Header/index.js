@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import axios from "axios";
 import Search from "../../../../components/Search";
 import "../../../../styles/sass/main.scss";
+import { Link } from "react-router-dom";
 
 class index extends Component {
   constructor(props) {
@@ -43,30 +44,30 @@ class index extends Component {
   };
   render() {
     return (
-      <header className="container">
-        <nav className="navbar navbar-expand-lg fixed-top header__content">
+      <header>
+        {/* fixed-top */}
+        <nav className="navbar navbar-expand-lg  header__content">
           <div className="col-sm-6">
             <div className="header__left">
-              <a className="navbar-brand" href="#">
+              <Link className="navbar-brand" to="/">
                 <img src="./images/logo.png" className="img-fluid" alt="ELearning Cybersoft" />
-              </a>
+              </Link>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />
               </button>
-              <Search />
             </div>
           </div>
           <div className="col-sm-6">
             <div className="header__right">
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
+                <ul className="navbar-nav ml-auto">
                   <li className="nav-item active">
-                    <a className="nav-link" href="#">TRANG CHỦ</a>
+                    <Link className="nav-link" to="/">TRANG CHỦ</Link>
                   </li>
                   <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link className="nav-link dropdown-toggle" to="/courses" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       CÁC KHÓA HỌC
-                                        </a>
+                    </Link>
                     <div className="dropdown-menu">
                       {/* <a className="dropdown-item" href="#">Lập Trình Tư Duy</a>
                       <a className="dropdown-item" href="#">Lập Trình Front End</a>
@@ -78,16 +79,16 @@ class index extends Component {
                     </div>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">SỰ KIỆN</a>
+                    <Link className="nav-link" to="#">SỰ KIỆN</Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">BLOG</a>
+                    <Link className="nav-link" to="#">BLOG</Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">LIÊN HỆ</a>
+                    <Link className="nav-link" to="#">LIÊN HỆ</Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">ĐĂNG NHẬP</a>
+                    <Link className="nav-link" to="#">ĐĂNG NHẬP</Link>
                   </li>
                 </ul>
 

@@ -1,4 +1,9 @@
 header {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
     .navbar.header__content {
         background-color: #1f2022;
         padding: 10px 0;
