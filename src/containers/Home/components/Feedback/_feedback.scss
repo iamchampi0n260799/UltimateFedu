@@ -1,0 +1,63 @@
+.feedback {
+    background-color: #f2ede6;
+    padding: 70px;
+    text-align: center;
+
+    .feedback__content {
+        h2 {
+            @include styleText($color-black-1, 40px, $fw-bold);
+            margin-bottom: 40px;
+        }
+
+        .feedback__tab {
+            .nav-tabs {
+                border-bottom: none;
+                justify-content: center;
+
+                .nav-link {
+                    border: 1px dashed #999;
+                    color: #000000;
+                    margin: 0 20px;
+                    border-radius: 50px;
+                    padding: 20px;
+                    min-width: 200px;
+                    font-size: 15px;
+                    transition: all 0.5s linear;
+                    background-color: transparent;
+                    &.active {
+                        border-color: #ff4f00;
+                        color: #ff4f00;
+                    }
+                    &:hover {
+                        border-color: #ff4f00;
+                        color: #ff4f00;
+                    }
+                }
+            }
+        }
+
+        .feedback__item {
+            margin: $mg-1 0;
+            .card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                background-color: #f2ede6;
+                border: none;
+                padding: 20px;
+                img {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                }
+
+                .feedback__item__content {
+                    text-align: center;
+                    height: 120px;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}

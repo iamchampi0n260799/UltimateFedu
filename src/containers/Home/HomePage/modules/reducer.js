@@ -1,9 +1,10 @@
-import { COURSES_REQUEST, COURSES_SUCCESS, COURSES_FAILED } from "./constant"
+import { COURSES_REQUEST, COURSES_SUCCESS, COURSES_FAILED , COURSES_SEARCH } from "./constant"
 
   let initialState = {
     loading: false,
     data: null,
     error: null,
+    searchTerm: "",
   };
   
   const courseReducer = (state = initialState, action) => {
@@ -25,6 +26,10 @@ import { COURSES_REQUEST, COURSES_SUCCESS, COURSES_FAILED } from "./constant"
         state.data = null;
         state.error = action.payload;
         return { ...state };
+      }
+      case COURSES_SEARCH : {
+        state.searchTerm = action.payload;
+        return {...state}
       }
       default:
         return { ...state };

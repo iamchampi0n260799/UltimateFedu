@@ -1,0 +1,19 @@
+// .cbs-btnWhite {
+//     @include styleButton($color-white-0, $color-blue-1, $border-radius-1, $pd-0 + 2, $pd-2);
+//     @include styleText($color-blue-1, $fs-0, $fw-bold-0);
+//     transition: all 0.3s;
+//     cursor: pointer;
+//     &:hover {
+//         @include styleHoverButton($color-white-0, $color-blue-2, $color-blue-2);
+//     }
+// }
+
+// .cbs-btnBlue {
+//     @include styleButton(#f39d07, #f39d07, $border-radius-1, $pd-0 + 2, $pd-2);
+//     @include styleText(#f39d07, $fs-0, $fw-bold-0);
+//     transition: all 0.3s;
+//     cursor: pointer;
+//     &:hover {
+//         @include styleHoverButton(#f39d07, $color-white-0, #f39d07);
+//     }
+// }

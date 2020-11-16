@@ -1,0 +1,25 @@
+// HELPER đầu tiên
+@import "./Helper/mixin";
+@import "./Helper/variables";
+
+// Vendor
+
+// Base
+@import "./Base/reset";
+
+// Components
+// @import "./styles/sass/Components/button";
+
+// Layouts
+@import "../../containers/Home/components/Header/header";
+@import "../../containers/Home/components/CourseCarousel/courseCarousel";
+@import "../../containers/Home/components/Reasons/reasons";
+@import "../../containers/Home/components/Categories/categories";
+// @import "./styles/sass/Layouts/courses";
+@import "../../containers/Home/components/Numbers/numbers";
+// @import "./../../containers/Home/components/Feedback/feedback";
+@import "../../containers/Home/components/Footer/footer";
+
+// Page
+
+// Theme

@@ -1,0 +1,32 @@
+.categories {
+    padding: 70px;
+
+    .categories__content {
+        text-align: center;
+        h1 {
+            @include styleText($color-black-1, $fs-4, $fw-bold);
+            padding: $pd-2;
+        }
+
+        .categories__item {
+            position: relative;
+            margin-bottom: $mg-2;
+
+            img {
+                width: 100%;
+                display: block;
+            }
+            h4 {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                padding: $pd-2;
+                margin: 0;
+                background-color: rgba(0, 0, 0, 0.4);
+                z-index: 1;
+                @include styleText($color-white-0, $fs-2, $fw-bold-0);
+            }
+        }
+    }
+}
