@@ -52,7 +52,7 @@ export default function Footer() {
                 <div className="row">
                     <div className="col-6">
                         <div className="footer__botLeft">
-                            <img src="./images/logo.png" className="img-fluid" alt="Elearning Cybersoft" />
+                            <img src="/images/logo.png" className="img-fluid" alt="Elearning Cybersoft" />
                             <p className="mb-0">Copyright © 2020 Cybersoft ELearning</p>
                         </div>
                     </div>

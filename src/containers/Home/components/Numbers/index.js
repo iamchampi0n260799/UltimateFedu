@@ -1,27 +1,43 @@
 import React, { Component } from 'react';
 import "./../../../../styles/sass/main.scss";
+import NumberItem from "../NumberItem";
 
 export default class Numbers extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            numbers: [
+                {
+                    number: "5014",
+                    name: "Khóa học & videos"
+                },
+                {
+                    number: "3890",
+                    name: "Học viên offline"
+                },
+                {
+                    number: "15",
+                    name: "Năm kinh nghiệm"
+                },
+                {
+                    number: "54",
+                    name: "Đối tác"
+                },
+            ]
+        }
+
+    }
     render() {
         return (
             <section className="numbers">
                 <div className="numbers__content container">
-                    <div className="numbers__item">
-                        <h1 className="counter">4</h1>
-                        <p>Cở Sở</p>
-                    </div>
-                    <div className="numbers__item">
-                        <h1 className="counter">54</h1>
-                        <p>Đối tác</p>
-                    </div>
-                    <div className="numbers__item">
-                        <h1 className="counter">3250</h1>
-                        <p>Học Viên</p>
-                    </div>
-                    <div className="numbers__item">
-                        <h1 className="counter">3</h1>
-                        <p>Năm Hoạt Động</p>
-                    </div>
+                    {
+                        this.state.numbers.map(function (number, index) {
+                            return (
+                                <NumberItem number={number} key={index} />
+                            );
+                        })
+                    }
                 </div>
             </section>
 

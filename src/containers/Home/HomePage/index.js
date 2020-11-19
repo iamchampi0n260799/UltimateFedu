@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import { connect } from "react-redux";
 import { actionFetchCourse } from "./modules/action";
 import MovieItems from "../../../components/MovieItems";
@@ -38,15 +38,15 @@ class index extends Component {
     return (
       <>
         <CourseCarousel />
+        <Numbers />
         <Reasons />
         {/* <Categories /> */}
-        <section className="container-fluid coursesContent">
-          <h3>Students are watching:</h3>
+        <section className="coursesContent" style={{ padding: "70px 0" }}>
+          <h3 className="mb-4 text-center display-4">Các Khóa Học</h3>
           <Grid container spaceing={3}>
             {this.renderCourse()}
           </Grid>
         </section>
-        <Numbers />
         <Feedback />
       </>
     );

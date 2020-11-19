@@ -30,16 +30,17 @@ class index extends Component {
   };
   renderCategoies = () => {
     return this.state.categories.map((item, index) => (
-      <a
+      <Link
         style={{ cursor: "pointer" }}
         key={index}
         onClick={() => {
           this.handleClickToPush(item.maDanhMuc);
         }}
         className="dropdown-item"
+        to={`/courses/${item.maDanhMuc}`}
       >
-        {item.tenDanhMuc}
-      </a>
+        { item.tenDanhMuc}
+      </Link >
     ));
   };
   render() {
@@ -50,7 +51,7 @@ class index extends Component {
           <div className="col-sm-6">
             <div className="header__left">
               <Link className="navbar-brand" to="/">
-                <img src="./images/logo.png" className="img-fluid" alt="ELearning Cybersoft" />
+                <img src="/images/logo.png" className="img-fluid" alt="ELearning Cybersoft" />
               </Link>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />
@@ -65,7 +66,7 @@ class index extends Component {
                     <Link className="nav-link" to="/">TRANG CHỦ</Link>
                   </li>
                   <li className="nav-item dropdown">
-                    <Link className="nav-link dropdown-toggle" to="/courses" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link className="nav-link dropdown-toggle" to="/courses" id="navbarDropdown" role="button" data-toggle="dropdown">
                       CÁC KHÓA HỌC
                     </Link>
                     <div className="dropdown-menu">
@@ -96,7 +97,7 @@ class index extends Component {
             </div>
           </div>
         </nav>
-      </header>
+      </header >
     );
   }
 }
