@@ -2,99 +2,81 @@ import React, { Component } from "react";
 import "./index.css";
 export default class index extends Component {
   render() {
-    const userInformation = JSON.parse(localStorage.getItem("user"))
-    console.log(userInformation);
+    const userInformation = JSON.parse(localStorage.getItem("user"));
     return (
-      <div>
-        <div className="user-profile container">
-          <div className="row">
-            <div className="col-sm-4 user-item text-center">
-              <div className>
-                <div className="left">
-                  <div className="left-image">
-                    <img src="./images/user.png" alt />
-                    
-                  </div>
-                  <div style={{marginLeft: "55px"}} className="left-menu">
-                    <div className="left-menu-item">
-                      <i className="fa fa-user" />
-                      <div className="child-item">
-                        <a href="">User profile</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{marginLeft: "55px"}} className="left-menu">
-                    <div className="left-menu-item">
-                      <i className="fa fa-book" />
-                      <div className="child-item">
-                        <a href="">My courses</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="right" />
-              </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-4">
+            <div>
+              <img
+                style={{ width: "90%", height: "90%" }}
+                src="./images/user.png"
+                alt=""
+              />
+              <h3 className="text-center">{userInformation.hoTen}</h3>
+              <p className="text-center">{userInformation.email}</p>
             </div>
-            <div className="col-sm-8 user-item">
-              <section className="signup">
-                <div className="container">
-                  <div className="signup-content">
-                    <div className="signup-form">
-                      
-                      <form action="">
-                        <div className="form-group">
-                          
-                          <label htmlFor="hoTen">
-                            <i class="fa fa-user"></i>
-                          </label>
-                          <input
-                            type="text"
-                            name="hoTen"
-                            id=""
-                            value={userInformation.hoTen}
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="email">
-                            <i class="fa fa-envelope"></i>
-                          </label>
-                          <input
-                            type="email"
-                            name="email"
-                            id=""
-                            value={userInformation.email}
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="taiKhoan">
-                            <i class="fa fa-asterisk"></i>
-                          </label>
-                          <input
-                            type="text"
-                            name="taiKhoan"
-                            id=""
-                            value={userInformation.taiKhoan}
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="soDT">
-                            <i class="fa fa-key"></i>
-                          </label>
-                          <input
-                            type="phone"
-                            name="soDT"
-                            id=""
-                            value={userInformation.soDT || "0907942969"}
-                          />
-                        </div>
-                        <button className="btn btn-primary">
-                          Update profile
-                        </button>
-                      </form>
-                    </div>
-                  </div>
+            <div className="box">
+              <i class="fa fa-user mr-5"></i>
+              <a href="#">User profile</a>
+            </div>
+            <hr />
+            <div className="box">
+              <i class="fa fa-book mr-5"></i>
+              <a href="#">User courses</a>
+            </div>
+            <hr />
+          </div>
+          <div className="col-8">
+            <div className="p-3 fancy" style={{ backgroundColor: "orange" }}>
+              <p className="text-center text-light">
+                Cuộc sống thật là vui khi làm wjbu và hãy luôn tự hào vì mình là
+                1 thằng wjbu
+              </p>
+            </div>
+            <div className="profile">
+              <h2>User profile</h2>
+              <form action="">
+                <div className="information-group">
+                  <h6>Họ tên:</h6>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    value={userInformation.hoTen}
+                  />
                 </div>
-              </section>
+                <div className="information-group">
+                  <h6>Email:</h6>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    value={userInformation.email}
+                  />
+                </div>
+                <div className="information-group">
+                  <h6>Tài khoản:</h6>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    value={userInformation.taiKhoan}
+                  />
+                </div>
+                <div className="information-group">
+                  <h6>Số điện thoại:</h6>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    value={userInformation.soDT || "01219138679"}
+                  />
+                </div>
+                <div className="information-group">
+                  <button className="btn btn-primary">Edit profile</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
