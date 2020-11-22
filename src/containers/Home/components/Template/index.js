@@ -6,9 +6,9 @@ export default class index extends Component {
     render() {
         return (
             <>
-                {/* <Header /> */}
+                <Header />
                 {this.props.children}
-                {/* <Footer /> */}
+                <Footer />
             </>
         )
     }

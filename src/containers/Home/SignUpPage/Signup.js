@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 function Signup(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    const user = { ...data, maLoaiNguoiDung: "QuanTri", maNhom: "GP01" };
+    // const user = { ...data, maLoaiNguoiDung: "QuanTri", maNhom: "GP01" };
+    const user = { ...data, maLoaiNguoiDung: "HV", maNhom: "GP01" };
     console.log(user);
     props.Signup(user, props.history);
   };
@@ -73,7 +74,8 @@ function Signup(props) {
                   <i class="fa fa-key"></i>
                 </label>
                 <input
-                  type="text"
+                  // type="text"
+                  type="password"
                   name="matKhau"
                   id=""
                   placeholder="Mật khẩu"
@@ -86,7 +88,8 @@ function Signup(props) {
                 )}
               </div>
               <div className="form-group">
-                <label htmlFor="nhapLaiMatKhau">
+                {/* <label htmlFor="nhapLaiMatKhau"> */}
+                <label htmlFor="soDT">
                   <i class="fa fa-key"></i>
                 </label>
                 <input
@@ -111,6 +114,7 @@ function Signup(props) {
             </form>
           </div>
           <div className="signup-image">
+            {/* <img style={{ width: "100%", height: "100%" }} src="./images/signup-image.jpg" alt="" /> */}
             <img style={{ width: "100%", height: "100%" }} src="/images/signup-image.jpg" alt="" />
           </div>
         </div>
