@@ -13,7 +13,7 @@ function Signin(props) {
       <div className="container">
         <div className="signup-content">
           <div className="signin-image">
-            <img style={{ width: "100%", height: "100%" }} src="./images/signin-image.jpg" alt="" />
+            <img style={{ width: "100%", height: "100%" }} src="/images/signin-image.jpg" alt="" />
           </div>
           <div className="signup-form">
             <h1>Login</h1>
