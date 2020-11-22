@@ -4,7 +4,7 @@ export default class index extends Component {
   render() {
     const userInformation = JSON.parse(localStorage.getItem("user"));
     return (
-      <div className="container">
+      <div className="user-profile container">
         <div className="row">
           <div className="col-4">
             <div>
