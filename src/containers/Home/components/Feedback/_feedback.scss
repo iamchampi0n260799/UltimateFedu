@@ -2,7 +2,7 @@
     background-color: #eeeeee;
     padding: 70px;
     text-align: center;
-
+    margin-top: 100px;
     .feedback__content {
         h2 {
             @include styleText($color-black-1, 40px, $fw-bold);

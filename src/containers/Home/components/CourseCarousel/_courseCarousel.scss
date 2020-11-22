@@ -1,9 +1,9 @@
 .courseCarousel {
     .courseCarousel__content {
-        background-image: url(../../../../assets/images/carousel-05.jpg);
+        background-image: url(../../../../assets/images/carousel-01.jpg);
         height: 700px;
         background-size: cover;
-        color: white;
+        color: black;
         text-align: left;
         padding: 10% 5%;
 
@@ -12,7 +12,8 @@
         }
 
         span {
-            font-size: 35px;
+            font-size: 30px;
+            font-weight: .00;
         }
 
         p {

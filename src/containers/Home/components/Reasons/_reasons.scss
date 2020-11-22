@@ -1,7 +1,7 @@
 .reasons__list {
     display: flex;
     flex-wrap: wrap;
-
+    margin-top: 50px;
     .reasons__title {
         @include styleText($color-black-1, $fs-4, $fw-bold);
         padding: 50px 20px;

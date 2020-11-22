@@ -2,7 +2,7 @@ import React from 'react'
 import { fetchSignIn } from "./module/action";
 import { connect } from "react-redux";
 import { useForm } from 'react-hook-form';
-
+import "./index.css"
 function Signin(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {

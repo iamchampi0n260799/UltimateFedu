@@ -14,6 +14,7 @@ import Categories from "../components/Categories";
 import Numbers from "../components/Numbers";
 import Feedback from "../components/Feedback";
 import Banner from "../components/Banner";
+import Companies from "../components/Companies";
 import "./index.css";
 class index extends Component {
   componentDidMount() {
@@ -44,7 +45,7 @@ class index extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 6,
+      slidesToShow: 5,
       slidesToScroll: 3,
       dots: true,
       autoplay: true,
@@ -56,7 +57,7 @@ class index extends Component {
         <Numbers />
         <Reasons />
         {/* <Categories /> */}
-        <section className="coursesContent mt-5">
+        <section className="coursesContent">
           <h2>Các khóa học tiêu biểu:</h2>
          
             <Slider {...settings}>
@@ -67,6 +68,7 @@ class index extends Component {
         </section>
         <Banner />
         <Feedback />
+        <Companies />
       </>
     );
   }

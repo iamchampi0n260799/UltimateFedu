@@ -1,0 +1,36 @@
+.companies{
+    background-color: #80808012;
+    .companies-content{
+        .dontknow{
+            margin-top: $mg-2;
+            display: flex;
+            .dontknow-items{
+                text-align: center;
+                width: 50%;
+                padding: 50px 0px;
+                h4{
+                    @include styleText($color-black-0,$fs-3,$fw-bold-1);
+                }
+                p{
+                    width: 50%;
+                    margin: 0 auto;
+                    padding: 20px;
+                }
+            }
+            .dontknow-items.active{
+                border-right: 1px solid #92919180;
+            }
+        }
+        .partners-logos{
+            display: flex;
+            justify-content: center;
+            .logo-item{
+                margin-right: 50px;
+                img{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}

@@ -4,10 +4,14 @@ header {
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
+    background-color: rgb(51, 50, 50);
     .navbar.header__content {
         padding: 10px 0;
         .header__left {
             display: flex;
+            img{
+                width: 150px;
+            }
             @include styleText($color-black-light, $fs-0, $fw-normal);
             .navbar-brand {
                 align-self: center;
@@ -55,11 +59,12 @@ header {
                 position: relative;
                 .nav-item {
                     align-self: center;
-
+                    
                     .nav-link {
                         @include styleText($color-white-0, $fs-0, $fw-normal);
                         padding: $pd-1;
                         white-space: nowrap;
+                        color: white;
                         // transition: all 0.4s linear;
                         &:hover {
                             background-color: rgba(255, 255, 255, 0.3);

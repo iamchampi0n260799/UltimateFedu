@@ -10,7 +10,7 @@ export default class CourseCarousel extends Component {
                     <h1 className="courseCarousel__title">HỌC VIỆN CYBERSOFT</h1>
                     <span className="display-3">CHUYÊN ĐÀO TẠO LẬP TRÌNH FRONT END</span>
                     <p>HỌC THỰC TẾ - LÀM CỰC DỄ</p>
-                    <button to="" className="btn btn-light">Xem Thêm</button>
+                    <button to="" className="btn btn-warning">Xem Thêm</button>
                 </div>
             </section>
         )
