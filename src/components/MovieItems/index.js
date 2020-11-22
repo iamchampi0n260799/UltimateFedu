@@ -21,9 +21,8 @@ const useStyles = makeStyles({
 function MovieItems(props) {
   const classes = useStyles();
   const { hinhAnh, tenKhoaHoc , moTa , maKhoaHoc} = props.course;
+  // onClick={() => {props.history.push(`/course/${maKhoaHoc}`)}}
   return (
-    <Grid className="modify" item xs={3} style={{marginBottom: "20px"}}>
-      <Paper className={classes.paper}>
         <Card className={classes.root}>
           <CardActionArea>
             <CardMedia
@@ -38,24 +37,39 @@ function MovieItems(props) {
               <Typography gutterBottom variant="h5" component="h2">
                 {tenKhoaHoc}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
             </CardContent>
           </CardActionArea>
+          <div class="p-3">
+                    <div class="card-name ">
+                        <h5>Angular - The Complete Guide (2020)</h5>
+                        <span>Maximilian Schwarzmüller</span>
+                    </div>
+                    <div class="card-rating">
+                        <span>4.6 </span>
+                        <span>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </span>
+                        <span> (131,482)</span>
+                    </div>
+                    <div class="card-price">
+                        <span style={{fontWeight: "bold"}}>$11,99   </span>
+                        <span>$129,99</span>
+                    </div>
+                </div>
           <CardActions>
-            <Button size="small" color="primary">
-              Add to card
-            </Button>
-            <Button size="small" color="primary">
-              <a onClick={() => {props.history.push(`/course/${maKhoaHoc}`)}}>Detail</a>
-              
-            </Button>
+            <button className="btn btn-warning" size="small" color="warning">
+              Bestseller
+            </button>
+            <button className="btn btn-light" size="small" color="warning">
+              Detail
+            </button>
           </CardActions>
         </Card>
-      </Paper>
-    </Grid>
+      
   );
 }
 export default withRouter(MovieItems);

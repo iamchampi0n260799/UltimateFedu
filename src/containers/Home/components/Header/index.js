@@ -4,7 +4,10 @@ import axios from "axios";
 import Search from "../../../../components/Search";
 import "../../../../styles/sass/main.scss";
 import { Link } from "react-router-dom";
-
+// 
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 class index extends Component {
   constructor(props) {
     super(props);
@@ -66,9 +69,9 @@ class index extends Component {
                     <Link className="nav-link" to="/">TRANG CHỦ</Link>
                   </li>
                   <li className="nav-item dropdown">
-                    <Link className="nav-link dropdown-toggle" to="/courses" id="navbarDropdown" role="button" data-toggle="dropdown">
+                    <a className="nav-link dropdown-toggle" to="/courses" id="navbarDropdown" role="button" data-toggle="dropdown">
                       CÁC KHÓA HỌC
-                    </Link>
+                    </a>
                     <div className="dropdown-menu">
                       {/* <a className="dropdown-item" href="#">Lập Trình Tư Duy</a>
                       <a className="dropdown-item" href="#">Lập Trình Front End</a>

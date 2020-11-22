@@ -1,312 +1,246 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import "../../../../styles/sass/main.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import FeedbackItem from "../FeedbackItem"
+import FeedbackItem from "../FeedbackItem";
 
 export default class Feedback extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            feedbacks: [
-                {
-                    id: "01",
-                    name: "Nguyễn Quốc",
-                    major: "Học viên chuyển ngành",
-                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-                    img: "./images/hocvientieubieu-01.jpg",
-                },
-                {
-                    id: "02",
-                    name: "Nguyễn Quốc",
-                    major: "Học viên chuyển ngành",
-                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-                    img: "./images/hocvientieubieu-02.jpg",
-                },
-                {
-                    id: "03",
-                    name: "Nguyễn Quốc",
-                    major: "Học viên chuyển ngành",
-                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-                    img: "./images/hocvientieubieu-03.jpg",
-                },
-                {
-                    id: "04",
-                    name: "Nguyễn Quốc",
-                    major: "Học viên chuyển ngành",
-                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-                    img: "./images/hocvientieubieu-01.jpg",
-                },
-                {
-                    id: "05",
-                    name: "Nguyễn Quốc",
-                    major: "Học viên chuyển ngành",
-                    comment: "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-                    img: "./images/hocvientieubieu-01.jpg",
-                },
-            ],
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      feedbacks: [
+        {
+          id: "01",
+          name: "Nguyễn Quốc",
+          major: "Học viên chuyển ngành",
+          comment:
+            "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+          img: "./images/hocvientieubieu-01.jpg",
+        },
+        {
+          id: "02",
+          name: "Nguyễn Quốc",
+          major: "Học viên chuyển ngành",
+          comment:
+            "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+          img: "./images/hocvientieubieu-02.jpg",
+        },
+        {
+          id: "03",
+          name: "Nguyễn Quốc",
+          major: "Học viên chuyển ngành",
+          comment:
+            "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+          img: "./images/hocvientieubieu-03.jpg",
+        },
+        {
+          id: "04",
+          name: "Nguyễn Quốc",
+          major: "Học viên chuyển ngành",
+          comment:
+            "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+          img: "./images/hocvientieubieu-01.jpg",
+        },
+        {
+          id: "05",
+          name: "Nguyễn Quốc",
+          major: "Học viên chuyển ngành",
+          comment:
+            "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
+          img: "./images/hocvientieubieu-01.jpg",
+        },
+      ],
+    };
+  }
 
-    render() {
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
+  render() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      initialSlide: 0,
+      autoplay: false,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
-            initialSlide: 0,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        initialSlide: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        };
-        return (
-            <section className="feedback">
-                <div className="feedback__content container">
-                    <h2>Học Viên Tiêu Biểu</h2>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <Slider {...settings}>
-                                {this.state.feedbacks.map(function (feedback) {
-                                    return (
-                                        <FeedbackItem feedback={feedback} key={feedback.id} />
-                                    );
-                                })}
-                                {/* <div className="feedback__item">
-                                    <div className="card">
-                                        <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
-                                        <div className="card-body">
-                                            <h4 className="card-title">Nguyễn Quốc</h4>
-                                            <p className="card-text">Học viên chuyển ngành</p>
-                                            <p className="card-text feedback__item__content">
-                                                Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
-                                                lòng với công việc hiện tại của tôi tại Global
-                                                CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
-                                                nhờ các khóa học chuyên sâu tại CyberSoft."
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="feedback__item">
-                                    <div className="card">
-                                        <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
-                                        <div className="card-body">
-                                            <h4 className="card-title">Nguyễn Quốc</h4>
-                                            <p className="card-text">Học viên chuyển ngành</p>
-                                            <p className="card-text feedback__item__content">
-                                                Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
-                                                lòng với công việc hiện tại của tôi tại Global
-                                                CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
-                                                nhờ các khóa học chuyên sâu tại CyberSoft."
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="feedback__item">
-                                    <div className="card">
-                                        <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
-                                        <div className="card-body">
-                                            <h4 className="card-title">Nguyễn Quốc</h4>
-                                            <p className="card-text">Học viên chuyển ngành</p>
-                                            <p className="card-text feedback__item__content">
-                                                Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
-                                                lòng với công việc hiện tại của tôi tại Global
-                                                CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
-                                                nhờ các khóa học chuyên sâu tại CyberSoft."
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div> */}
-                            </Slider>
-                            {/* <div className="feedback__tab">
-                                <div className="tab-content" id="feedbackTabContent">
-                                    <div className="tab-pane fade show active" id="workers" role="tabpanel">
-                                        <div className="feedback__item owl-carousel owl-theme">
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Nguyễn Quốc</h4>
-                                                    <p className="card-text">Học viên chuyển ngành</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
-                                                        lòng với công việc hiện tại của tôi tại Global
-                                                        CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
-                                                        nhờ các khóa học chuyên sâu tại CyberSoft."
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-02.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Đinh Phúc Nguyên</h4>
-                                                    <p className="card-text">Học viên ngành CNTT</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        FPT " Tôi học được rất nhiều từ kỹ năng làm việc, các
-                                                        kỹ thuật chuyên sâu và kỹ năng mềm tại các khóa học
-                                                        của CyberSoft. Điều này đã giúp tôi tự tin rất nhiều
-                                                        khi làm việc tại tập đoàn FPT "
-                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-03.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Nguyễn Đức Thái</h4>
-                                                    <p className="card-text">Học viên chuyển ngành</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        Nền tảng Xây dựng ĐH BK Hà Nội " Sau 2 năm tốt nghiệp
-                                                        ngành xây dựng, tôi đã thấy mình không phù hợp. Tôi đã
-                                                        tìm đến với CyberSoft và nay tôi đã có được công việc
-                                                        đúng mong đợi của mình tại Viivue"
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-03.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Nguyễn Đức Thái</h4>
-                                                    <p className="card-text">Học viên chuyển ngành</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        Nền tảng Xây dựng ĐH BK Hà Nội " Sau 2 năm tốt nghiệp
-                                                        ngành xây dựng, tôi đã thấy mình không phù hợp. Tôi đã
-                                                        tìm đến với CyberSoft và nay tôi đã có được công việc
-                                                        đúng mong đợi của mình tại Viivue"
-                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tab-pane fade" id="students" role="tabpanel">
-                                        <div className="feedback__item owl-carousel owl-theme">
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Nguyễn Quốc</h4>
-                                                    <p className="card-text">Học viên chuyển ngành</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
-                                                        lòng với công việc hiện tại của tôi tại Global
-                                                        CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
-                                                        nhờ các khóa học chuyên sâu tại CyberSoft."
-                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-02.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Đinh Phúc Nguyên</h4>
-                                                    <p className="card-text">Học viên ngành CNTT</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        FPT " Tôi học được rất nhiều từ kỹ năng làm việc, các
-                                                        kỹ thuật chuyên sâu và kỹ năng mềm tại các khóa học
-                                                        của CyberSoft. Điều này đã giúp tôi tự tin rất nhiều
-                                                        khi làm việc tại tập đoàn FPT "
-                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-03.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Nguyễn Đức Thái</h4>
-                                                    <p className="card-text">Học viên chuyển ngành</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        Nền tảng Xây dựng ĐH BK Hà Nội " Sau 2 năm tốt nghiệp
-                                                        ngành xây dựng, tôi đã thấy mình không phù hợp. Tôi đã
-                                                        tìm đến với CyberSoft và nay tôi đã có được công việc
-                                                        đúng mong đợi của mình tại Viivue"
-                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tab-pane fade" id="facebooks" role="tabpanel">
-                                        <div className="feedback__item owl-carousel owl-theme">
-                                            &lt;
-                <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-01.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Nguyễn Quốc</h4>
-                                                    <p className="card-text">Học viên chuyển ngành</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        Nền tảng Cơ Điện Tử ĐH Bách Khoa " Tôi vô cùng hài
-                                                        lòng với công việc hiện tại của tôi tại Global
-                                                        CyberSoft. Tôi đã chọn lại được đúng đam mê của mình
-                                                        nhờ các khóa học chuyên sâu tại CyberSoft."
-                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-02.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Đinh Phúc Nguyên</h4>
-                                                    <p className="card-text">Học viên ngành CNTT</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        FPT " Tôi học được rất nhiều từ kỹ năng làm việc, các
-                                                        kỹ thuật chuyên sâu và kỹ năng mềm tại các khóa học
-                                                        của CyberSoft. Điều này đã giúp tôi tự tin rất nhiều
-                                                        khi làm việc tại tập đoàn FPT "
-                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="card">
-                                                <img className="card-img-top" src="./images/hocvientieubieu-03.jpg" alt="Card image" />
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Nguyễn Đức Thái</h4>
-                                                    <p className="card-text">Học viên chuyển ngành</p>
-                                                    <p className="card-text feedback__item__content">
-                                                        Nền tảng Xây dựng ĐH BK Hà Nội " Sau 2 năm tốt nghiệp
-                                                        ngành xây dựng, tôi đã thấy mình không phù hợp. Tôi đã
-                                                        tìm đến với CyberSoft và nay tôi đã có được công việc
-                                                        đúng mong đợi của mình tại Viivue"
-                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul className="nav nav-tabs" id="feedbackTab" role="tablist">
-                                    <li className="nav-item">
-                                        <a className="nav-link active" id="workers-tab" data-toggle="tab" href="#workers" role="tab">Người đi làm</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" id="students-tab" data-toggle="tab" href="#students" role="tab">Sinh viên</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" id="facebooks-tab" data-toggle="tab" href="#facebooks" role="tab">Nhận xét trên Facebook</a>
-                                    </li>
-                                </ul>
-                            </div> */}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    };
+    return (
+      // <section className="feedback">
+      //     <div className="feedback__content">
+      //         <h2>Học Viên Tiêu Biểu</h2>
+      //         <div className="row">
+      //             <div className="col-md-12">
+      //                 <Slider {...settings}>
+      //                     {this.state.feedbacks.map(function (feedback) {
+      //                         return (
+      //                             <FeedbackItem feedback={feedback} key={feedback.id} />
+      //                         );
+      //                     })}
+      //                 </Slider>
+      //             </div>
+      //         </div>
+      //     </div>
+      // </section>
+      
 
-        )
-    }
+      <section className="feedback">
+        <div className="headerBorderTop" />
+        <div className="your-class2 feedback-content">
+            <Slider {...settings}>
+            <div className="feedback-items">
+            <span>
+              <img src="./images/fb1.jpg" alt />
+              <div className="mt-3 pt-3">
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+              </div>
+              <br />
+              <span style={{ fontWeight: "bold", fontSize: 20 }}>Borivoje</span>
+            </span>
+            <p>
+              CyberSoft is a life saver. I don't have the time or money for a
+              college education. My goal is to become a freelance web developer,
+              and thanks to CyberSoft, I'm really close.
+            </p>
+          </div>
+          <div className="feedback-items">
+            <span>
+              <img src="./images/fb2.jpg" alt />
+              <div className="mt-3 pt-3">
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+              </div>
+              <br />
+              <span style={{ fontWeight: "bold", fontSize: 20 }}>Dipesh</span>
+            </span>
+            <p>
+              CyberSoft is a life saver. I don't have the time or money for a
+              college education. My goal is to become a freelance web developer,
+              and thanks to CyberSoft, I'm really close.
+            </p>
+          </div>
+          <div className="feedback-items">
+            <span>
+              <img src="./images/fb3.jpg" alt />
+              <div className="mt-3 pt-3">
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+              </div>
+              <br />
+              <span style={{ fontWeight: "bold", fontSize: 20 }}>Kathy</span>
+            </span>
+            <p>
+              CyberSoft is a life saver. I don't have the time or money for a
+              college education. My goal is to become a freelance web developer,
+              and thanks to CyberSoft, I'm really close.
+            </p>
+          </div>
+          <div className="feedback-items">
+            <span>
+              <img src="./images/fb4.jpg" alt />
+              <div className="mt-3 pt-3">
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+              </div>
+              <br />
+              <span style={{ fontWeight: "bold", fontSize: 20 }}>Borivoje</span>
+            </span>
+            <p>
+              CyberSoft is a life saver. I don't have the time or money for a
+              college education. My goal is to become a freelance web developer,
+              and thanks to CyberSoft, I'm really close.
+            </p>
+          </div>
+          <div className="feedback-items">
+            <span>
+              <img src="./images/fb2.jpg" alt />
+              <div className="mt-3 pt-3">
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+              </div>
+              <br />
+              <span style={{ fontWeight: "bold", fontSize: 20 }}>Dipesh</span>
+            </span>
+            <p>
+              CyberSoft is a life saver. I don't have the time or money for a
+              college education. My goal is to become a freelance web developer,
+              and thanks to CyberSoft, I'm really close.
+            </p>
+          </div>
+          <div className="feedback-items">
+            <span>
+              <img src="./images/fb3.jpg" alt />
+              <div className="mt-3 pt-3">
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+                <i className="fa fa-star" />
+              </div>
+              <br />
+              <span style={{ fontWeight: "bold", fontSize: 20 }}>Kathy</span>
+            </span>
+            <p>
+              CyberSoft is a life saver. I don't have the time or money for a
+              college education. My goal is to become a freelance web developer,
+              and thanks to CyberSoft, I'm really close.
+            </p>
+          </div>
+        
+            </Slider>
+          
+        </div>
+        <button
+          className="slick-next slick-arrow"
+          aria-label="Next"
+          type="button"
+          style={{ color: "red" }}
+        >
+          Next
+        </button>
+      </section>
+    );
+  }
 }
