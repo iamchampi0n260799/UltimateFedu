@@ -8,7 +8,7 @@ function Signup(props) {
   const onSubmit = (data) => {
     const user = { ...data, maLoaiNguoiDung: "QuanTri", maNhom: "GP01" };
     console.log(user);
-    props.Signup(user , props.history);
+    props.Signup(user, props.history);
   };
   return (
     <section className="signup">
@@ -111,13 +111,13 @@ function Signup(props) {
             </form>
           </div>
           <div className="signup-image">
-            <img style={{width: "100%" , height: "100%"}}  src="./images/signup-image.jpg" alt="" />
+            <img style={{ width: "100%", height: "100%" }} src="/images/signup-image.jpg" alt="" />
           </div>
         </div>
       </div>
     </section>
 
-    
+
   );
 }
 const mapStateToProps = (state) => {
@@ -129,8 +129,8 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    Signup: (data , history) => {
-      dispatch(fetchSignUp(data , history));
+    Signup: (data, history) => {
+      dispatch(fetchSignUp(data, history));
     },
   };
 };
