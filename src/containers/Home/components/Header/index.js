@@ -79,7 +79,7 @@ class index extends Component {
                       <a className="dropdown-item" href="#">Lập Trình Di Động</a>
                       <a className="dropdown-item" href="#">Lập Trình Full Stack</a>
                       <a className="dropdown-item" href="#">Thiết Kế Web</a> */}
-                      {this.renderCategoies()}
+                      {/* {this.renderCategoies()} */}
                     </div>
                   </li>
                   <li className="nav-item">

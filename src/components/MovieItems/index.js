@@ -23,7 +23,7 @@ function MovieItems(props) {
   const { hinhAnh, tenKhoaHoc , moTa , maKhoaHoc} = props.course;
   // onClick={() => {props.history.push(`/course/${maKhoaHoc}`)}}
   return (
-        <Card className={classes.root}>
+        <Card onClick={() => {props.history.push(`/course/${maKhoaHoc}`)}} className={classes.root}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -64,7 +64,7 @@ function MovieItems(props) {
             <button className="btn btn-warning" size="small" color="warning">
               Bestseller
             </button>
-            <button className="btn btn-light" size="small" color="warning">
+            <button className="btn btn-light" size="small" color="warning" >
               Detail
             </button>
           </CardActions>

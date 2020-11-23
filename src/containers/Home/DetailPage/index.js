@@ -22,7 +22,7 @@ class index extends Component {
               <h6>Business &gt; Strategy &gt; Digital Marketing</h6>
             </div>
             <div className="header mb-3">
-                {data && <h1>{data.tenKhoaHoc}</h1>}
+                {data && <h1>{data.tenKhoaHoc || "No name"}</h1>}
             </div>
             <div className="lead-header mb-3">
               {data && data.moTa}
