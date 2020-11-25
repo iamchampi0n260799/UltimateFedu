@@ -11,6 +11,9 @@
   
     position: relative;
   }
+  .detail{
+    padding-top: 70px;
+  }
   .topic {
     color: rgb(102, 199, 231);
   }
