@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import "./index.css";
 import { fetchSignUp } from "./module/action";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
 function Signup(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
@@ -20,7 +22,7 @@ function Signup(props) {
             <form action="" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
                 <label htmlFor="hoTen">
-                  <i class="fa fa-user"></i>
+                  <i className="fa fa-user"></i>
                 </label>
                 <input
                   ref={register({
@@ -37,7 +39,7 @@ function Signup(props) {
               </div>
               <div className="form-group">
                 <label htmlFor="email">
-                  <i class="fa fa-envelope"></i>
+                  <i className="fa fa-envelope"></i>
                 </label>
                 <input
                   ref={register({
@@ -54,7 +56,7 @@ function Signup(props) {
               </div>
               <div className="form-group">
                 <label htmlFor="taiKhoan">
-                  <i class="fa fa-asterisk"></i>
+                  <i className="fa fa-asterisk"></i>
                 </label>
                 <input
                   type="text"
@@ -71,7 +73,7 @@ function Signup(props) {
               </div>
               <div className="form-group">
                 <label htmlFor="matKhau">
-                  <i class="fa fa-key"></i>
+                  <i className="fa fa-key"></i>
                 </label>
                 <input
                   // type="text"
@@ -90,7 +92,7 @@ function Signup(props) {
               <div className="form-group">
                 {/* <label htmlFor="nhapLaiMatKhau"> */}
                 <label htmlFor="soDT">
-                  <i class="fa fa-key"></i>
+                  <i className="fa fa-key"></i>
                 </label>
                 <input
                   type="number"
@@ -107,7 +109,7 @@ function Signup(props) {
               </div>
               <div className="form-group">
                 <span>
-                  Bạn đã có tài khoản ? <a href="/signin">Đăng nhập</a>
+                  Bạn đã có tài khoản ? <Link to="/signin">Đăng nhập</Link>
                 </span>
               </div>
               <button className="btn btn-primary">Đăng ký</button>

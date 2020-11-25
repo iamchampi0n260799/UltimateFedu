@@ -3,9 +3,12 @@ import { fetchSignIn } from "./module/action";
 import { connect } from "react-redux";
 import { useForm } from 'react-hook-form';
 import "./index.css"
+import { Link } from "react-router-dom";
+
 function Signin(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
+    console.log(data);
     props.Signin(data, props.history)
   }
   return (
@@ -20,7 +23,7 @@ function Signin(props) {
             <form action="" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
                 <label htmlFor="taiKhoan">
-                  <i class="fa fa-asterisk"></i>
+                  <i className="fa fa-asterisk"></i>
                 </label>
                 <input
                   type="taiKhoan"
@@ -37,7 +40,7 @@ function Signin(props) {
               </div>
               <div className="form-group">
                 <label htmlFor="matKhau">
-                  <i class="fa fa-key"></i>
+                  <i className="fa fa-key"></i>
                 </label>
                 <input
                   type="password"
@@ -54,7 +57,7 @@ function Signin(props) {
               </div>
               <div className="form-group">
                 <span>
-                  Bạn chưa có tài khoản ? <a href="/signup">Đăng ký</a>
+                  Bạn chưa có tài khoản ? <Link to="/signup">Đăng ký</Link>
                 </span>
               </div>
               <button className="btn btn-primary">Đăng nhập</button>

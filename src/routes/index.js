@@ -5,12 +5,30 @@ import Courses from "../containers/Home/CoursesPage"
 import SignUp from '../containers/Home/SignUpPage/Signup'
 import SignIn from '../containers/Home/SignInPage/Signin'
 import User from '../containers/Home/UserPage'
-export const routesHome = [
+import UsersAdmin from "../containers/Admin/Users";
+import CoursesAdmin from "../containers/Admin/Courses";
+
+const routesHome = [
     { path: '/', component: Home, exact: true },
     { path: '/signup', component: SignUp, exact: false },
     { path: '/signin', component: SignIn, exact: false },
     { path: '/user', component: User, exact: false },
-    { path: '/courses', component: Courses, exact: true },
+    { path: '/courses', component: Courses, exact: false },
     { path: '/course/:id', component: DetailCoursePage, exact: false },
     { path: '/categories/:categories', component: CategoriesPage, exact: false },
-]
+];
+
+const routesAdmin = [
+    {
+        path: "/admin/users",
+        component: UsersAdmin,
+        exact: false
+    },
+    {
+        path: "/admin/courses",
+        component: CoursesAdmin,
+        exact: false
+    },
+];
+
+export { routesHome, routesAdmin };

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
+
 export default class index extends Component {
   render() {
     const userInformation = JSON.parse(localStorage.getItem("user"));
@@ -10,19 +11,19 @@ export default class index extends Component {
             <div>
               <img
                 style={{ width: "90%", height: "90%" }}
-                src="./images/user.png"
+                src="/images/user.png"
                 alt=""
               />
               <h3 className="text-center">{userInformation.hoTen}</h3>
               <p className="text-center">{userInformation.email}</p>
             </div>
             <div className="box">
-              <i class="fa fa-user mr-5"></i>
+              <i className="fa fa-user mr-5"></i>
               <a href="#">User profile</a>
             </div>
             <hr />
             <div className="box">
-              <i class="fa fa-book mr-5"></i>
+              <i className="fa fa-book mr-5"></i>
               <a href="#">User courses</a>
             </div>
             <hr />
