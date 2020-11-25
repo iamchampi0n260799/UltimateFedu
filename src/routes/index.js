@@ -11,4 +11,19 @@ export const routesHome = [
     { path: '/user', component: User, exact: false },
     { path: '/course/:id', component: DetailCoursePage, exact: false },
     { path: '/categories/:categories', component: CategoriesPage, exact: false },
-]
+];
+
+const routesAdmin = [
+    {
+        path: "/admin/users",
+        component: UsersAdmin,
+        exact: false
+    },
+    {
+        path: "/admin/courses",
+        component: CoursesAdmin,
+        exact: false
+    },
+];
+
+export { routesHome, routesAdmin };
