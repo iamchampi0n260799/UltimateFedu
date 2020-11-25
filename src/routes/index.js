@@ -3,7 +3,7 @@ import DetailCoursePage from '../containers/Home/DetailPage'
 import CategoriesPage from '../containers/Home/CategoriesPage'
 import SignUp from '../containers/Home/SignUpPage/Signup'
 import SignIn from '../containers/Home/SignInPage/Signin'
-import User from '../containers/Home/UserPage'
+import User from '../containers/Home/UserPage/User'
 export const routesHome = [
     { path: '/', component: Home, exact: true },
     { path: '/signup', component: SignUp, exact: false },

@@ -12,7 +12,15 @@
 }
 .information-group{
     margin-bottom: 50px;
+    
 }
 .profile{
     padding: 15px;
+}
+.information-group-edit{
+    display: flex;
+    margin-bottom: 50px;
+}
+.modal-body form{
+    margin: 0px auto;
 }
