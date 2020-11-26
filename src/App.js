@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { routesHome, routesAdmin } from "./routes";
-import Home from "./containers/Home";
+// import Home from "./containers/Home";
 import PageNotFound from "./containers/PageNotFound";
-import Admin from "./containers/Admin";
-import Signin from "./containers/Home/SignInPage/Signin";
+// import Admin from "./containers/Admin";
+// import Signin from "./containers/Home/SignInPage/Signin";
+import Loader from "./components/Loader";
+
+const Home = lazy(() => import("./containers/Home"));
+const Admin = lazy(() => import("./containers/Admin"));
+const Signin = lazy(() => import("./containers/Home/SignInPage/Signin"));
 
 function App() {
   const renderHomePages = (routesHome) => {
@@ -37,15 +42,17 @@ function App() {
   };
 
   return (
-    <BrowserRouter className="App">
-      <Switch>
-        {renderHomePages(routesHome)}
-        {renderAdminPages(routesAdmin)}
-        <Route path="/admin" component={Signin} />
-        <Route path="" exact="true" component={PageNotFound} />
-      </Switch>
+    <Suspense fallback={<div>Loading...</div>}>
+      <BrowserRouter className="App">
+        <Switch>
+          {renderHomePages(routesHome)}
+          {renderAdminPages(routesAdmin)}
+          <Route path="/admin" component={Signin} />
+          <Route path="" exact component={PageNotFound} />
+        </Switch>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 
