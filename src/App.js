@@ -41,9 +41,10 @@ function App() {
       <Switch>
         {renderHomePages(routesHome)}
         {renderAdminPages(routesAdmin)}
+        <Route path="/admin" component={Signin} />
+        <Route path="" exact="true" component={PageNotFound} />
       </Switch>
-      <Route path="/admin" component={Signin} />
-      <Route path="" component={PageNotFound} />
+      
     </BrowserRouter>
   );
 }

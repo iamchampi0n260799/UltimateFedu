@@ -3,13 +3,13 @@ import "./index.css";
 import { fetchUserEdit } from "./module/action";
 import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
+import { useSelector } from 'react-redux'
 function User(props) {
   const userInformation = JSON.parse(localStorage.getItem("user"));
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     props.EditUser({...data , maLoaiNguoiDung: "HV" , maNhom: "GP01"} , props.history)
   };
-
   return (
     <div className="user-profile container">
       <div className="row">

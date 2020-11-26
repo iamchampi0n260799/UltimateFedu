@@ -19,6 +19,7 @@ export const fetchUserEdit = (user , history) => {
             }
         }).then((result) => {
             dispatch(actFetchEditSuccess(result.data))
+            console.log(result);
             
         }).catch((error) => {
             dispatch(actFetchEditFailed(error))
