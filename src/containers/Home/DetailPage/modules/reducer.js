@@ -10,7 +10,7 @@ let initialState = {
   error: null,
 };
 
-const movieDetailReducer = (state = initialState, action) => {
+const courseDetailReducer = (state = initialState, action) => {
   switch (action.type) {
     case COURSE_DETAIL_REQUEST: {
       state.loading = true;
@@ -34,4 +34,4 @@ const movieDetailReducer = (state = initialState, action) => {
       return { ...state };
   }
 };
-export default movieDetailReducer;
+export default courseDetailReducer;

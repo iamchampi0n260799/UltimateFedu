@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { connect } from "react-redux";
 import { actionFetchCourse } from "./modules/action";
-import MovieItems from "../../../components/MovieItems";
+import CourseItems from "../../../components/CourseItems";
 import Loader from "../../../components/Loader";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -32,7 +32,7 @@ class index extends Component {
         );
       });
       return data.map((course, index) => (
-        <MovieItems key={index} course={course} />
+        <CourseItems key={index} course={course} />
       ));
     }
   };
@@ -57,15 +57,15 @@ class index extends Component {
         <CourseCarousel />
         <Numbers />
         <Reasons />
-        
+
         {/* <Categories /> */}
         <section className="coursesContent">
           <h2>Các khóa học tiêu biểu:</h2>
-            <Slider {...settings}>
+          <Slider {...settings}>
             {this.renderCourse()}
-            </Slider>
-            
-          
+          </Slider>
+
+
         </section>
         <Banner />
         <Feedback />

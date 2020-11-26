@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { actFetchCategories } from "./modules/action";
-import MovieItems from "../../../components/MovieItems";
+import CourseItems from "../../../components/CourseItems";
 class index extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +17,7 @@ class index extends Component {
     const { data } = this.props;
     if (data) {
       return data.map((course, index) => (
-        <MovieItems key={index} course={course} />
+        <CourseItems key={index} course={course} />
       ));
     }
   };
