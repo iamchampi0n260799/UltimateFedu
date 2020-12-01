@@ -5,11 +5,15 @@ import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
 import { useSelector } from 'react-redux'
 function User(props) {
-  const userInformation = JSON.parse(localStorage.getItem("user"));
+  let userInformation = JSON.parse(localStorage.getItem("user"));
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     props.EditUser({...data , maLoaiNguoiDung: "HV" , maNhom: "GP01"} , props.history)
   };
+  let data = props.data;
+  if(data){
+    userInformation = data
+  }
   return (
     <div className="user-profile container">
       <div className="row">
@@ -96,19 +100,12 @@ function User(props) {
                 aria-hidden="true"
               >
                 <div class="modal-dialog" role="document">
-                  <div class="modal-content">
+                  <div class="modal-content pt-5">
                     <div class="modal-header">
                       <h5 class="modal-title" id="exampleModalLabel">
                         Edit User
                       </h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+                      
                     </div>
                     <div class="modal-body">
                       <form action="" onSubmit={handleSubmit(onSubmit)}>
