@@ -13,7 +13,7 @@ function User(props) {
   let data = props.data;
   if(data){
     localStorage.setItem("user" , JSON.stringify(data))
-    userInformation = data
+    userInformation = JSON.parse(localStorage.getItem("user"));
   }
   return (
     <div className="user-profile container">
