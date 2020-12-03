@@ -25,7 +25,7 @@ export default class Header extends Component {
                                         <a className="nav-link" href="#">TRANG CHỦ</a>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             CÁC KHÓA HỌC
                                         </a>
                                         <div className="dropdown-menu">

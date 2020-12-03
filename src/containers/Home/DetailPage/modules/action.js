@@ -1,11 +1,9 @@
 import { COURSE_DETAIL_REQUEST,COURSE_DETAIL_SUCESS,COURSE_DETAIL_FAILED } from "./constants"
+import { COURSES_RESIGN_REQUEST , COURSES_RESIGN_SUCCESS ,COURSES_RESIGN_FAILED } from "./constants"
 import axios from "axios"
 export const actFetchCourseDetail = (maKhoaHoc) => {
-    // API
     return (dispatch) => {
         dispatch(actFetchCourseDetailRequest())
-
-
         const url = `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${maKhoaHoc}`
         axios.get(url)
             .then((result) => {
@@ -13,17 +11,9 @@ export const actFetchCourseDetail = (maKhoaHoc) => {
             })
             .catch((error) => {
                 dispatch(actFetchCourseDetailFailed(error))
-            })
-        
+            })  
     }
 }
-
-
-
-
-
-
-
 const actFetchCourseDetailRequest = () => {
     return {
         type: COURSE_DETAIL_REQUEST
@@ -41,3 +31,50 @@ const actFetchCourseDetailFailed = (error) => {
         payload: error
     }
 }
+
+
+export const actResignCourses = (data) => {
+    return (dispatch) => {
+        let accessToken = ''
+        if(localStorage.getItem('user')){
+            let getItemLocalStorage = JSON.parse(localStorage.getItem('user'))
+            accessToken = getItemLocalStorage.accessToken;
+        }
+        dispatch(actResignCourseRequest())
+        axios({
+            url: `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/DangKyKhoaHoc`,
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            },
+            data,
+        })
+            .then((result) => {
+                dispatch(actResignCourseSuccess(result.data))
+            })
+            .catch((error) => {
+                dispatch(actResignCourseFailed(error))
+            }) 
+    }
+}
+
+const actResignCourseRequest = () => {
+    return {
+        type: COURSES_RESIGN_REQUEST
+    }
+}
+const actResignCourseSuccess = (data) => {
+    return {
+        type: COURSES_RESIGN_SUCCESS,
+        payload: data
+    }
+}
+const actResignCourseFailed = (error) => {
+    return {
+        type: COURSES_RESIGN_FAILED,
+        payload: error
+    }
+}
+
+
+

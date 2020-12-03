@@ -14,7 +14,6 @@ import "./index.css"
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    boxShadow: "none"
   },
 });
 
@@ -23,7 +22,8 @@ function CourseItems(props) {
   const { hinhAnh, tenKhoaHoc, moTa, maKhoaHoc } = props.course;
   // onClick={() => {props.history.push(`/course/${maKhoaHoc}`)}}
   return (
-    <Card onClick={() => { props.history.push(`/course/${maKhoaHoc}`) }} className={classes.root}>
+    
+      <Card onClick={() => { props.history.push(`/course/${maKhoaHoc}`) }} className={classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -69,6 +69,8 @@ function CourseItems(props) {
             </button>
       </CardActions>
     </Card>
+    
+    
 
   );
 }

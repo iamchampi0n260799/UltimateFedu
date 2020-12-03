@@ -10,6 +10,7 @@ class Search extends Component {
       <input
         type="text"
         className="form-control mb-3 w-50"
+        placeholder="Tìm kiếm khóa học bạn muốn"
         onChange={(event) => {
           this.props.getKeyWord(event.target.value)
         }}

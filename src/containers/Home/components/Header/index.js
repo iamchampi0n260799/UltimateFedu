@@ -69,9 +69,9 @@ class index extends Component {
                     <Link className="nav-link" to="/">TRANG CHỦ</Link>
                   </li>
                   <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" to="/courses" id="navbarDropdown" role="button" data-toggle="dropdown">
+                    <Link className="nav-link" to="/course">
                       CÁC KHÓA HỌC
-                    </a>
+                    </Link>
                     <div className="dropdown-menu">
                       {/* <a className="dropdown-item" href="#">Lập Trình Tư Duy</a>
                       <a className="dropdown-item" href="#">Lập Trình Front End</a>

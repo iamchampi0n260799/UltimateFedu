@@ -1,0 +1,15 @@
+.coursepage{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded{
+    box-shadow: 0 8px 20px #eae6e3;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    padding: 30px;
+    
+}
+.MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover{
+    box-shadow: 0 8px 20px #6b6a6a;
+}

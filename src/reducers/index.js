@@ -5,6 +5,7 @@ import categoriesReducer from '../containers/Home/CategoriesPage/modules/reducer
 import signupReducer from '../containers/Home/SignUpPage/module/reducer'
 import signinReducer from "../containers/Home/SignInPage/module/reducer"
 import editUserReducer from '../containers/Home/UserPage/module/reducer'
+import resignCourseReducer from '../containers/Home/DetailPage/modules/resignCourseReducer'
 const rootReducer = combineReducers({
     courseReducer,
     courseDetailReducer,
@@ -12,5 +13,6 @@ const rootReducer = combineReducers({
     signupReducer,
     signinReducer,
     editUserReducer,
+    resignCourseReducer,
 })
 export default rootReducer;

@@ -12,7 +12,7 @@ function User(props) {
   };
   let data = props.data;
   if(data){
-    localStorage.setItem("user" , JSON.stringify(data))
+    localStorage.setItem("user" , JSON.stringify({...data , accessToken: userInformation.accessToken}))
     userInformation = JSON.parse(localStorage.getItem("user"));
   }
   return (

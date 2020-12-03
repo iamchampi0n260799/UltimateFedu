@@ -4,6 +4,7 @@ import CategoriesPage from '../containers/Home/CategoriesPage'
 import SignUp from '../containers/Home/SignUpPage/Signup'
 import SignIn from '../containers/Home/SignInPage/Signin'
 import User from '../containers/Home/UserPage/User'
+import Course from '../containers/Home/CoursesPage'
 // Admin page
 import UsersAdmin from '../containers/Admin/Users'
 import CoursesAdmin from '../containers/Admin/Courses'
@@ -12,6 +13,7 @@ export const routesHome = [
     { path: '/signup', component: SignUp, exact: false },
     { path: '/signin', component: SignIn, exact: false },
     { path: '/user', component: User, exact: false },
+    { path: '/course', component: Course, exact: true },
     { path: '/course/:id', component: DetailCoursePage, exact: false },
     { path: '/categories/:categories', component: CategoriesPage, exact: false },
 ];
