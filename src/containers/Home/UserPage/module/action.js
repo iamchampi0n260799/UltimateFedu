@@ -19,7 +19,7 @@ export const fetchUserEdit = (user , history) => {
             }
         }).then((result) => {
             dispatch(actFetchEditSuccess(result.data))
-            console.log(result);
+            history.push("/user")
             
         }).catch((error) => {
             dispatch(actFetchEditFailed(error))
