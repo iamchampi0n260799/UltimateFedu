@@ -8,6 +8,8 @@ import Course from '../containers/Home/CoursesPage'
 // Admin page
 import UsersAdmin from '../containers/Admin/Users'
 import CoursesAdmin from '../containers/Admin/Courses'
+import Dashboard from "../containers/Admin/Dashboard";
+
 export const routesHome = [
     { path: '/', component: Home, exact: true },
     { path: '/signup', component: SignUp, exact: false },
@@ -19,6 +21,11 @@ export const routesHome = [
 ];
 
 export const routesAdmin = [
+    {
+        path: "/admin/dashboard",
+        component: Dashboard,
+        exact: false
+    },
     {
         path: "/admin/users",
         component: UsersAdmin,

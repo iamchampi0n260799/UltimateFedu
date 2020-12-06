@@ -34,7 +34,7 @@ function App() {
             key={index}
             exact={route.exact}
             path={route.path}
-            component={route.component}
+            Component={route.component}
           />
         );
       });
@@ -47,6 +47,7 @@ function App() {
         <Switch>
           {renderHomePages(routesHome)}
           {renderAdminPages(routesAdmin)}
+
           <Route path="/admin" component={Signin} />
           <Route path="" exact component={PageNotFound} />
         </Switch>

@@ -1,4 +1,4 @@
-header {
+.header__home {
     position: absolute;
     width: 100%;
     left: 50%;
@@ -9,7 +9,7 @@ header {
         padding: 10px 0;
         .header__left {
             display: flex;
-            img{
+            img {
                 width: 150px;
             }
             @include styleText($color-black-light, $fs-0, $fw-normal);
@@ -59,7 +59,7 @@ header {
                 position: relative;
                 .nav-item {
                     align-self: center;
-                    
+
                     .nav-link {
                         @include styleText($color-white-0, $fs-0, $fw-normal);
                         padding: $pd-1;

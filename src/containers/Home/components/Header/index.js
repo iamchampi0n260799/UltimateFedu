@@ -48,7 +48,7 @@ class index extends Component {
   };
   render() {
     return (
-      <header>
+      <header className="header__home">
         {/* fixed-top */}
         <nav className="navbar navbar-expand-lg  header__content">
           <div className="col-sm-6">
