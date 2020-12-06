@@ -1,19 +1,54 @@
-import React, { Component } from "react";
+import React, { Component , useState , useEffect } from "react";
 import "./index.css";
 import { fetchUserEdit } from "./module/action";
 import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
-import { useSelector } from 'react-redux'
+import axios from "axios"
 function User(props) {
+  let [ khoaHocDaDangKy , setKhoaHocDaDangKy ] = useState([])
+
   let userInformation = JSON.parse(localStorage.getItem("user"));
+
   const { register, handleSubmit, errors } = useForm();
+
   const onSubmit = (data) => {
     props.EditUser({...data , maLoaiNguoiDung: "HV" , maNhom: "GP01"} , props.history)
   };
+
   let data = props.data;
+
   if(data){
     localStorage.setItem("user" , JSON.stringify({...data , accessToken: userInformation.accessToken}))
     userInformation = JSON.parse(localStorage.getItem("user"));
+  }
+
+  useEffect(() => {
+    
+    axios({
+      url: `https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan`,
+      method: "POST",
+      data: {
+        taiKhoan: `${userInformation.taiKhoan}`,
+        matKhau: `${userInformation.matKhau}`,
+      },
+      headers: {
+        Authorization: `Bearer ${userInformation.accessToken}`
+    },
+    }).then((result) => {
+      setKhoaHocDaDangKy(result.data.chiTietKhoaHocGhiDanh)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }, [])
+  const renderRegisterCourses = () => {
+    if(khoaHocDaDangKy){
+      return khoaHocDaDangKy.map((khoaHoc , index) => (
+        <div className="userCourse" key={index}>
+          <h5>{khoaHoc.tenKhoaHoc}</h5>
+          <button className="btn btn-danger">Hủy</button>
+        </div>
+      ))
+    }
   }
   return (
     <div className="user-profile container">
@@ -47,7 +82,7 @@ function User(props) {
             </p>
           </div>
           <div className="profile">
-            <h2>User profile</h2>
+            <h2>User's profile</h2>
             <div className="information-group">
               <h6>Họ tên:</h6>
               <input
@@ -209,6 +244,8 @@ function User(props) {
                 </div>
               </div>
             </div>
+            <h2>User's courses</h2>
+            {renderRegisterCourses()}
           </div>
         </div>
       </div>

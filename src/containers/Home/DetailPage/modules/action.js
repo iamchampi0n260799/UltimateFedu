@@ -33,7 +33,7 @@ const actFetchCourseDetailFailed = (error) => {
 }
 
 
-export const actResignCourses = (data) => {
+export const actResignCourses = (data , history) => {
     return (dispatch) => {
         let accessToken = ''
         if(localStorage.getItem('user')){
@@ -51,6 +51,7 @@ export const actResignCourses = (data) => {
         })
             .then((result) => {
                 dispatch(actResignCourseSuccess(result.data))
+                history.push('/user')
             })
             .catch((error) => {
                 dispatch(actResignCourseFailed(error))

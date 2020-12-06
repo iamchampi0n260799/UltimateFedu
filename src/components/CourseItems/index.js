@@ -20,7 +20,6 @@ const useStyles = makeStyles({
 function CourseItems(props) {
   const classes = useStyles();
   const { hinhAnh, tenKhoaHoc, moTa, maKhoaHoc } = props.course;
-  // onClick={() => {props.history.push(`/course/${maKhoaHoc}`)}}
   return (
     
       <Card onClick={() => { props.history.push(`/course/${maKhoaHoc}`) }} className={classes.root}>
@@ -39,8 +38,8 @@ function CourseItems(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <div class="p-3">
-        <div class="card-name ">
+      <div className="p-3">
+        <div className="card-name ">
           <h5>Angular - The Complete Guide (2020)</h5>
           <span>Maximilian Schwarzmüller</span>
         </div>

@@ -66,6 +66,7 @@ class Courses extends Component {
       <div className="">
         <div className="row">
           <div className="categories col-2">
+          <Link to="/course" style={{fontWeight: "600"}} className="dropdown-item">Tất cả khỏa học</Link>
             {this.renderCategoies()}
           </div>
           <div className="coursepage col-10">
