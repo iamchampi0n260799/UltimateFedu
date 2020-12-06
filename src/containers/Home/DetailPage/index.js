@@ -16,7 +16,8 @@ class index extends Component {
       taiKhoan: user.taiKhoan
     }
     console.log(resignCourse)
-    this.props.fetchCourseResign(resignCourse)
+    this.props.fetchCourseResign(resignCourse , this.props.history)
+    
   }
   render() {
     const { data, loading, error } = this.props;
@@ -456,8 +457,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchCourseDetail: (id) => {
       dispatch(actFetchCourseDetail(id));
     },
-    fetchCourseResign: (data) => {
-      dispatch(actResignCourses(data))
+    fetchCourseResign: (data , history) => {
+      dispatch(actResignCourses(data , history))
     }
   };
 };

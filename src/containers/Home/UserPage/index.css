@@ -24,3 +24,18 @@
 .modal-body form{
     margin: 0px auto;
 }
+.userCourse{
+    background: url('../../../assets//images/learning.jpg');
+    border-bottom: 10px solid black;
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 20px #eae6e3;
+    transition: all 0.5s;
+}
+.userCourse:hover{
+    opacity: 0.8;
+}
