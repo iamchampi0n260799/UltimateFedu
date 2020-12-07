@@ -1,5 +1,7 @@
 import { COURSE_DETAIL_REQUEST,COURSE_DETAIL_SUCESS,COURSE_DETAIL_FAILED } from "./constants"
 import { COURSES_RESIGN_REQUEST , COURSES_RESIGN_SUCCESS ,COURSES_RESIGN_FAILED } from "./constants"
+import { COURSES_CANCEL_REQUEST , COURSES_CANCEL_SUCCESS ,COURSES_CANCEL_FAILED } from "./constants"
+
 import axios from "axios"
 export const actFetchCourseDetail = (maKhoaHoc) => {
     return (dispatch) => {
@@ -51,6 +53,7 @@ export const actResignCourses = (data , history) => {
         })
             .then((result) => {
                 dispatch(actResignCourseSuccess(result.data))
+                alert('Đăng ký thành công')
                 history.push('/user')
             })
             .catch((error) => {
@@ -77,5 +80,48 @@ const actResignCourseFailed = (error) => {
     }
 }
 
+export const actCancelCourse = (data) => {
+    return (dispatch) => {
+        let accessToken = ''
+        if(localStorage.getItem('user')){
+            let getItemLocalStorage = JSON.parse(localStorage.getItem('user'))
+            accessToken = getItemLocalStorage.accessToken;
+        }
+        dispatch(actResignCourseRequest())
+        axios({
+            url: `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/HuyGhiDanh`,
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            },
+            data,
+        })
+            .then((result) => {
+                dispatch(actResignCourseSuccess(result.data))
+                alert('Hủy đăng ký thành công')
+                window.location.href = window.location.pathname + window.location.search + window.location.hash;
+                
 
-
+            })
+            .catch((error) => {
+                dispatch(actResignCourseFailed(error))
+            }) 
+    }
+}
+const actCancelCourseRequest = () => {
+    return {
+        type: COURSES_CANCEL_REQUEST
+    }
+}
+const actCancelCourseSuccess = (data) => {
+    return {
+        type: COURSES_CANCEL_SUCCESS,
+        payload: data
+    }
+}
+const actCancelCourseFailed = (error) => {
+    return {
+        type: COURSES_CANCEL_FAILED,
+        payload: error
+    }
+}

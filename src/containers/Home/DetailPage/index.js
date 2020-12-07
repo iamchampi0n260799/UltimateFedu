@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { actFetchCourseDetail , actResignCourses} from "./modules/action";
+import { actFetchCourseDetail , actResignCourses , actCancelCourse} from "./modules/action";
 import { connect } from "react-redux";
 import Loader from "../../../components/Loader";
 import "./index.css"
@@ -459,7 +459,8 @@ const mapDispatchToProps = (dispatch) => {
     },
     fetchCourseResign: (data , history) => {
       dispatch(actResignCourses(data , history))
-    }
+    },
+    
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(index);

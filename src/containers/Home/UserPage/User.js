@@ -4,6 +4,7 @@ import { fetchUserEdit } from "./module/action";
 import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
 import axios from "axios"
+import { actCancelCourse } from "../DetailPage/modules/action";
 function User(props) {
   let [ khoaHocDaDangKy , setKhoaHocDaDangKy ] = useState([])
 
@@ -35,21 +36,30 @@ function User(props) {
         Authorization: `Bearer ${userInformation.accessToken}`
     },
     }).then((result) => {
+      
       setKhoaHocDaDangKy(result.data.chiTietKhoaHocGhiDanh)
     }).catch((error) => {
       console.log(error)
     })
   }, [])
+  const cancelCourse = (maKhoaHoc) => {
+    props.fetchCancelCourse({
+      maKhoaHoc,
+      taiKhoan: userInformation.taiKhoan
+    })
+  }
   const renderRegisterCourses = () => {
     if(khoaHocDaDangKy){
       return khoaHocDaDangKy.map((khoaHoc , index) => (
-        <div className="userCourse" key={index}>
+        <div id="userCourses" className="userCourse" key={index}>
           <h5>{khoaHoc.tenKhoaHoc}</h5>
-          <button className="btn btn-danger">Hủy</button>
+          
+          <button onClick={() => { cancelCourse(khoaHoc.maKhoaHoc) }} className="btn btn-danger">Hủy</button>
         </div>
       ))
     }
   }
+  
   return (
     <div className="user-profile container">
       <div className="row">
@@ -65,12 +75,12 @@ function User(props) {
           </div>
           <div className="box">
             <i class="fa fa-user mr-5"></i>
-            <a href="#">User profile</a>
+            <a href="#userProfile">User profile</a>
           </div>
           <hr />
           <div className="box">
             <i class="fa fa-book mr-5"></i>
-            <a href="#">User courses</a>
+            <a href="#userCourses">User courses</a>
           </div>
           <hr />
         </div>
@@ -81,7 +91,7 @@ function User(props) {
               thằng wjbu
             </p>
           </div>
-          <div className="profile">
+          <div id="userProfile" className="profile">
             <h2>User's profile</h2>
             <div className="information-group">
               <h6>Họ tên:</h6>
@@ -264,6 +274,9 @@ const mapDispatchToProps = (dispatch) => {
     EditUser: (data , history) => {
       dispatch(fetchUserEdit(data , history));
     },
+    fetchCancelCourse: (data , history) => {
+      dispatch(actCancelCourse(data , history))
+    }
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(User);
