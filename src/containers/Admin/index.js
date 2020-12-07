@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from "react-router-dom";
-import TemplateAdmin from './components/Template';
+import Template from './components/Template';
 
 export default function Admin({ Component, ...props }) {
     return (
@@ -9,9 +9,9 @@ export default function Admin({ Component, ...props }) {
             render={(propsComponent) => {
                 if (localStorage.getItem("user")) {
                     return (
-                        <TemplateAdmin>
+                        <Template>
                             <Component {...propsComponent} />
-                        </TemplateAdmin>
+                        </Template>
                     );
                 }
                 return <Redirect to="/admin" />;
