@@ -19,8 +19,9 @@ export const fetchUserEdit = (user , history) => {
             }
         }).then((result) => {
             dispatch(actFetchEditSuccess(result.data))
-            history.push("/user")
             
+            window.location.href = window.location.pathname + window.location.search + window.location.hash;
+
         }).catch((error) => {
             dispatch(actFetchEditFailed(error))
         })

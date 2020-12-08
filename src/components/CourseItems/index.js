@@ -7,10 +7,10 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import { withRouter } from 'react-router'
-import "./index.css"
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import { withRouter } from "react-router";
+import "./index.css";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -21,14 +21,17 @@ function CourseItems(props) {
   const classes = useStyles();
   const { hinhAnh, tenKhoaHoc, moTa, maKhoaHoc } = props.course;
   return (
-    
-      <Card onClick={() => { props.history.push(`/course/${maKhoaHoc}`) }} className={classes.root}>
+    <Card
+      onClick={() => {
+        props.history.push(`/course/${maKhoaHoc}`);
+      }}
+      className={classes.root}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
           height="140"
-
           image={hinhAnh}
           title="Contemplative Reptile"
         />
@@ -55,22 +58,20 @@ function CourseItems(props) {
           <span> (131,482)</span>
         </div>
         <div class="card-price">
-          <span style={{ fontWeight: "bold" }}>$11,99   </span>
+          <span style={{ fontWeight: "bold" }}>$11,99 </span>
           <span>$129,99</span>
         </div>
       </div>
       <CardActions>
         <button className="btn btn-warning" size="small" color="warning">
           Bestseller
-            </button>
-        <button className="btn btn-light" size="small" color="warning" >
+        </button>
+        <button className="btn btn-light" size="small" color="warning">
           Detail
-            </button>
+        </button>
       </CardActions>
+      
     </Card>
-    
-    
-
   );
 }
 export default withRouter(CourseItems);

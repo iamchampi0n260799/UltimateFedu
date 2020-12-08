@@ -48,7 +48,6 @@ class index extends Component {
       speed: 500,
       slidesToShow: 5,
       slidesToScroll: 3,
-      dots: true,
       autoplay: true,
       autoplaySpeed: 2000
     };
