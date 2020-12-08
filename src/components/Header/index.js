@@ -4,8 +4,7 @@ import "./../../styles/sass/main.scss";
 export default class Header extends Component {
 
     render() {
-        const user = JSON.parse(localStorage.getItem('user'))
-        console.log(user)
+        
         return (
             <header className="container">
                 <nav className="navbar navbar-expand-lg fixed-top header__content">

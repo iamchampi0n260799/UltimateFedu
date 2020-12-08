@@ -7,7 +7,7 @@ export default class index extends Component {
         return (
             <>
                 <Header />
-                {this.props.children}
+                    {this.props.children}
                 <Footer />
             </>
         )

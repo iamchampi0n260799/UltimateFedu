@@ -21,7 +21,6 @@ class index extends Component {
   }
   render() {
     const { data, loading, error } = this.props;
-    console.log(data);
     if (loading) {
       return <Loader />;
     }

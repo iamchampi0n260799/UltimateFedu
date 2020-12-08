@@ -132,3 +132,11 @@
     //     // }
     // }
 }
+.nav-link.logoUser{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    opacity: 0.8;
+}
+.nav-link.logoUser:hover{
+    opacity: 1;
+}

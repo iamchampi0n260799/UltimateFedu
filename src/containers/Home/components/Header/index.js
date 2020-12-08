@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import axios from "axios";
-import Search from "../../../../components/Search";
 import "../../../../styles/sass/main.scss";
 import { Link } from "react-router-dom";
-// 
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+//
+
 class index extends Component {
   constructor(props) {
     super(props);
@@ -42,11 +39,23 @@ class index extends Component {
         className="dropdown-item"
         to={`/courses/${item.maDanhMuc}`}
       >
-        { item.tenDanhMuc}
-      </Link >
+        {item.tenDanhMuc}
+      </Link>
     ));
   };
+  shortUserName = (userName) => {
+    
+    let splitNameToArray = userName.split(" ");
+    let result = "";
+    for (let i = 0; i <= splitNameToArray.length - 1; i++) {
+      result += splitNameToArray[i].charAt(0).toUpperCase();
+    }
+
+    return result
+  };
   render() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
     return (
       <header className="header__home">
         {/* fixed-top */}
@@ -54,19 +63,36 @@ class index extends Component {
           <div className="col-sm-6">
             <div className="header__left">
               <Link className="navbar-brand" to="/">
-                <img src="/images/logo.png" className="img-fluid" alt="ELearning Cybersoft" />
+                <img
+                  src="/images/logo.png"
+                  className="img-fluid"
+                  alt="ELearning Cybersoft"
+                />
               </Link>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
                 <span className="navbar-toggler-icon" />
               </button>
             </div>
           </div>
           <div className="col-sm-6">
             <div className="header__right">
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item active">
-                    <Link className="nav-link" to="/">TRANG CHỦ</Link>
+                    <Link className="nav-link" to="/">
+                      TRANG CHỦ
+                    </Link>
                   </li>
                   <li className="nav-item dropdown">
                     <Link className="nav-link" to="/course">
@@ -83,24 +109,38 @@ class index extends Component {
                     </div>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="#">SỰ KIỆN</Link>
+                    <Link className="nav-link" to="#">
+                      SỰ KIỆN
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="#">BLOG</Link>
+                    <Link className="nav-link" to="#">
+                      BLOG
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="#">LIÊN HỆ</Link>
+                    <Link className="nav-link" to="#">
+                      LIÊN HỆ
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/signin">ĐĂNG NHẬP</Link>
+                    {user ? (
+                      <Link className="nav-link logoUser" to="/user">
+                        {this.shortUserName(user.hoTen)}
+                      </Link>
+                      
+                    ) : (
+                      <Link className="nav-link" to="/signin">
+                        ĐĂNG NHẬP
+                      </Link>
+                    )}
                   </li>
                 </ul>
-
               </div>
             </div>
           </div>
         </nav>
-      </header >
+      </header>
     );
   }
 }
