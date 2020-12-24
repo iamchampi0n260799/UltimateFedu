@@ -8,20 +8,20 @@ export default class Numbers extends Component {
         this.state = {
             numbers: [
                 {
-                    number: "5014",
+                    number: 5014,
                     name: "Khóa học & videos"
                 },
                 {
-                    number: "3890",
+                    number: 3890,
                     name: "Học viên offline"
                 },
                 {
-                    number: "15",
+                    number: 15,
                     name: "Năm kinh nghiệm"
                 },
                 {
-                    number: "54",
-                    name: "Đối tác"
+                    number: 54,
+                    name: "Đối tác",
                 },
             ]
         }

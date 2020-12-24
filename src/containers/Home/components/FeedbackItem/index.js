@@ -6,7 +6,7 @@ export default class FeedbackItem extends Component {
         return (
             <div className="feedback__item">
                 <div className="card">
-                    <img className="card-img-top" src={feedback.img} alt="Card image" />
+                    <img className="card-img-top" src={feedback.imgFeedback} alt="Card image" />
                     <div className="card-body">
                         <h4 className="card-title">{feedback.name}</h4>
                         <p className="card-text">{feedback.major}</p>

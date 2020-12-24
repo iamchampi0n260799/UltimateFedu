@@ -3,7 +3,7 @@ import "../../../../styles/sass/main.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import FeedbackItem from "../FeedbackItem";
+// import FeedbackItem from "../FeedbackItem";
 
 export default class Feedback extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export default class Feedback extends Component {
           major: "Học viên chuyển ngành",
           comment:
             "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-          img: "./images/hocvientieubieu-01.jpg",
+          imgFeedback: "./images/hocvientieubieu-01.jpg",
         },
         {
           id: "02",
@@ -24,7 +24,7 @@ export default class Feedback extends Component {
           major: "Học viên chuyển ngành",
           comment:
             "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-          img: "./images/hocvientieubieu-02.jpg",
+          imgFeedback: "./images/hocvientieubieu-02.jpg",
         },
         {
           id: "03",
@@ -32,7 +32,7 @@ export default class Feedback extends Component {
           major: "Học viên chuyển ngành",
           comment:
             "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-          img: "./images/hocvientieubieu-03.jpg",
+          imgFeedback: "./images/hocvientieubieu-03.jpg",
         },
         {
           id: "04",
@@ -40,7 +40,7 @@ export default class Feedback extends Component {
           major: "Học viên chuyển ngành",
           comment:
             "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-          img: "./images/hocvientieubieu-01.jpg",
+          imgFeedback: "./images/hocvientieubieu-01.jpg",
         },
         {
           id: "05",
@@ -48,7 +48,7 @@ export default class Feedback extends Component {
           major: "Học viên chuyển ngành",
           comment:
             "Tôi vô cùng hài lòng với công việc hiện tại của tôi tại Global CyberSoft. Tôi đã chọn lại được đúng đam mê của mình nhờ các khóa học chuyên sâu tại CyberSoft.",
-          img: "./images/hocvientieubieu-01.jpg",
+          imgFeedback: "./images/hocvientieubieu-01.jpg",
         },
       ],
     };
@@ -108,129 +108,129 @@ export default class Feedback extends Component {
       //         </div>
       //     </div>
       // </section>
-      
+
 
       <section className="feedback">
         <div className="headerBorderTop" />
         <div className="your-class2 feedback-content">
-            <Slider {...settings}>
+          <Slider {...settings}>
             <div className="feedback-items">
-            <span>
-              <img src="./images/fb1.jpg" alt />
-              <div className="mt-3 pt-3">
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </div>
-              <br />
-              <span style={{ fontWeight: "bold", fontSize: 20 }}>Borivoje</span>
-            </span>
-            <p>
-              CyberSoft is a life saver. I don't have the time or money for a
-              college education. My goal is to become a freelance web developer,
-              and thanks to CyberSoft, I'm really close.
+              <span>
+                <img src="./images/fb1.jpg" alt="" />
+                <div className="mt-3 pt-3">
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                </div>
+                <br />
+                <span style={{ fontWeight: "bold", fontSize: 20 }}>Borivoje</span>
+              </span>
+              <p>
+                CyberSoft is a life saver. I don't have the time or money for a
+                college education. My goal is to become a freelance web developer,
+                and thanks to CyberSoft, I'm really close.
             </p>
-          </div>
-          <div className="feedback-items">
-            <span>
-              <img src="./images/fb2.jpg" alt />
-              <div className="mt-3 pt-3">
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </div>
-              <br />
-              <span style={{ fontWeight: "bold", fontSize: 20 }}>Dipesh</span>
-            </span>
-            <p>
-              CyberSoft is a life saver. I don't have the time or money for a
-              college education. My goal is to become a freelance web developer,
-              and thanks to CyberSoft, I'm really close.
+            </div>
+            <div className="feedback-items">
+              <span>
+                <img src="./images/fb2.jpg" alt="" />
+                <div className="mt-3 pt-3">
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                </div>
+                <br />
+                <span style={{ fontWeight: "bold", fontSize: 20 }}>Dipesh</span>
+              </span>
+              <p>
+                CyberSoft is a life saver. I don't have the time or money for a
+                college education. My goal is to become a freelance web developer,
+                and thanks to CyberSoft, I'm really close.
             </p>
-          </div>
-          <div className="feedback-items">
-            <span>
-              <img src="./images/fb3.jpg" alt />
-              <div className="mt-3 pt-3">
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </div>
-              <br />
-              <span style={{ fontWeight: "bold", fontSize: 20 }}>Kathy</span>
-            </span>
-            <p>
-              CyberSoft is a life saver. I don't have the time or money for a
-              college education. My goal is to become a freelance web developer,
-              and thanks to CyberSoft, I'm really close.
+            </div>
+            <div className="feedback-items">
+              <span>
+                <img src="./images/fb3.jpg" alt="" />
+                <div className="mt-3 pt-3">
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                </div>
+                <br />
+                <span style={{ fontWeight: "bold", fontSize: 20 }}>Kathy</span>
+              </span>
+              <p>
+                CyberSoft is a life saver. I don't have the time or money for a
+                college education. My goal is to become a freelance web developer,
+                and thanks to CyberSoft, I'm really close.
             </p>
-          </div>
-          <div className="feedback-items">
-            <span>
-              <img src="./images/fb4.jpg" alt />
-              <div className="mt-3 pt-3">
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </div>
-              <br />
-              <span style={{ fontWeight: "bold", fontSize: 20 }}>Borivoje</span>
-            </span>
-            <p>
-              CyberSoft is a life saver. I don't have the time or money for a
-              college education. My goal is to become a freelance web developer,
-              and thanks to CyberSoft, I'm really close.
+            </div>
+            <div className="feedback-items">
+              <span>
+                <img src="./images/fb4.jpg" alt="" />
+                <div className="mt-3 pt-3">
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                </div>
+                <br />
+                <span style={{ fontWeight: "bold", fontSize: 20 }}>Borivoje</span>
+              </span>
+              <p>
+                CyberSoft is a life saver. I don't have the time or money for a
+                college education. My goal is to become a freelance web developer,
+                and thanks to CyberSoft, I'm really close.
             </p>
-          </div>
-          <div className="feedback-items">
-            <span>
-              <img src="./images/fb2.jpg" alt />
-              <div className="mt-3 pt-3">
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </div>
-              <br />
-              <span style={{ fontWeight: "bold", fontSize: 20 }}>Dipesh</span>
-            </span>
-            <p>
-              CyberSoft is a life saver. I don't have the time or money for a
-              college education. My goal is to become a freelance web developer,
-              and thanks to CyberSoft, I'm really close.
+            </div>
+            <div className="feedback-items">
+              <span>
+                <img src="./images/fb2.jpg" alt="" />
+                <div className="mt-3 pt-3">
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                </div>
+                <br />
+                <span style={{ fontWeight: "bold", fontSize: 20 }}>Dipesh</span>
+              </span>
+              <p>
+                CyberSoft is a life saver. I don't have the time or money for a
+                college education. My goal is to become a freelance web developer,
+                and thanks to CyberSoft, I'm really close.
             </p>
-          </div>
-          <div className="feedback-items">
-            <span>
-              <img src="./images/fb3.jpg" alt />
-              <div className="mt-3 pt-3">
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-                <i className="fa fa-star" />
-              </div>
-              <br />
-              <span style={{ fontWeight: "bold", fontSize: 20 }}>Kathy</span>
-            </span>
-            <p>
-              CyberSoft is a life saver. I don't have the time or money for a
-              college education. My goal is to become a freelance web developer,
-              and thanks to CyberSoft, I'm really close.
+            </div>
+            <div className="feedback-items">
+              <span>
+                <img src="./images/fb3.jpg" alt="" />
+                <div className="mt-3 pt-3">
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                  <i className="fa fa-star" />
+                </div>
+                <br />
+                <span style={{ fontWeight: "bold", fontSize: 20 }}>Kathy</span>
+              </span>
+              <p>
+                CyberSoft is a life saver. I don't have the time or money for a
+                college education. My goal is to become a freelance web developer,
+                and thanks to CyberSoft, I'm really close.
             </p>
-          </div>
-        
-            </Slider>
-          
+            </div>
+
+          </Slider>
+
         </div>
         <button
           className="slick-next slick-arrow"

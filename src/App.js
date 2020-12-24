@@ -42,8 +42,12 @@ function App() {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <BrowserRouter className="App">
+        {/* <button className="scrollTop">
+          <i className="fa fa-angle-up"></i>
+        </button> */}
+        {/* <Suspense fallback={<Loader />}> */}
         <Switch>
           {renderHomePages(routesHome)}
           {renderAdminPages(routesAdmin)}
@@ -51,6 +55,7 @@ function App() {
           <Route path="/admin" component={Signin} />
           <Route path="" exact component={PageNotFound} />
         </Switch>
+        {/* </Suspense> */}
 
       </BrowserRouter>
     </Suspense>

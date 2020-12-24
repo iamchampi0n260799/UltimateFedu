@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../../../../styles/sass/main.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default class CourseCarousel extends Component {
     render() {

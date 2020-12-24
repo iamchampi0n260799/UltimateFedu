@@ -55,12 +55,12 @@ function Signin(props) {
                   <span className="text-danger">{errors.matKhau.message}</span>
                 )}
               </div>
+              <button className="btn btn-primary">Đăng nhập</button>
               <div className="form-group">
                 <span>
                   Bạn chưa có tài khoản ? <Link to="/signup">Đăng ký</Link>
                 </span>
               </div>
-              <button className="btn btn-primary">Đăng nhập</button>
             </form>
           </div>
         </div>

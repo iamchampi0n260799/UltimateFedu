@@ -1,0 +1,1 @@
+export const API_ELEARNING = "https://elearning0706.cybersoft.edu.vn/api";

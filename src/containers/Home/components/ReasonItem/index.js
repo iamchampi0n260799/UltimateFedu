@@ -51,9 +51,9 @@ export default class ReasonItem extends Component {
                 <div className="reasons__image">
                     <div className="reasons__slider">
                         <Slider {...settings}>
-                            <img src={reason.img1} alt />
-                            <img src={reason.img2} alt />
-                            <img src={reason.img3} alt />
+                            <img src={reason.img1} alt="" />
+                            <img src={reason.img2} alt="" />
+                            <img src={reason.img3} alt="" />
                         </Slider>
                     </div>
                 </div>
