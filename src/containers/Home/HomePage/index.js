@@ -67,6 +67,8 @@ class index extends Component {
 
         </section>
         <Banner />
+        
+        
         <Feedback />
         <Companies />
       </>
