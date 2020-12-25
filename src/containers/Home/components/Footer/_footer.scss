@@ -63,77 +63,77 @@
 //         }
 //     }
 // }
-footer{
+footer {
     margin-top: 100px;
-    .headerBorderTop{
-        margin-top: 50px;
-        height: 0.5rem;
-        width: 100%;
-        background: linear-gradient(90deg, rgb(100, 91, 83) 0%, rgb(235, 82, 82) 18.23%, rgb(247, 143, 47) 34.37%, rgb(244, 193, 81) 48.96%, rgb(82, 187, 118) 66.15%, rgb(38, 165, 215) 82.29%, rgb(224, 105, 183) 100%);
-    }
-    .second-footer{
-        margin-top: $mg-2;
-        .second-footer-left{
-            img{
-                margin-right: 10px;
-            }
-            span{
-                color: gray;
-                font-size: 14px;
-            }
-            padding-left: 154px;
-        }
-        .second-footer-right{
-            ul{
-                display: flex;
-                justify-content: center;
-                li{
-                    margin-right: 10px;
-                    list-style: none;
-                   
-                    a{
-                        color: #007791;
-                        text-decoration: none;
+    // .headerBorderTop{
+    //     margin-top: 50px;
+    //     height: 0.5rem;
+    //     width: 100%;
+    //     background: linear-gradient(90deg, rgb(100, 91, 83) 0%, rgb(235, 82, 82) 18.23%, rgb(247, 143, 47) 34.37%, rgb(244, 193, 81) 48.96%, rgb(82, 187, 118) 66.15%, rgb(38, 165, 215) 82.29%, rgb(224, 105, 183) 100%);
+    // }
+    // .second-footer{
+    //     margin-top: $mg-2;
+    //     .second-footer-left{
+    //         img{
+    //             margin-right: 10px;
+    //         }
+    //         span{
+    //             color: gray;
+    //             font-size: 14px;
+    //         }
+    //         padding-left: 154px;
+    //     }
+    //     .second-footer-right{
+    //         ul{
+    //             display: flex;
+    //             justify-content: center;
+    //             li{
+    //                 margin-right: 10px;
+    //                 list-style: none;
 
-                        cursor: pointer;
-                        &:hover{
-                            color: black;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .language{
-        .language-btn{
-            border: 1px solid rgb(153, 148, 148);
-            padding: 10px;
-            background-color: white;
-            &:hover{
-                background-color: #ece6e69a;
-            }
-        }
-    }
-    .footer-links{
-        ul{
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            height: 109px;
-            width: 80%;
-            margin: 0px auto;
-            li{
-                list-style: none;
-                a{
-                    color: #007791;
-                    text-decoration: none;
+    //                 a{
+    //                     color: #007791;
+    //                     text-decoration: none;
 
-                    cursor: pointer;
-                }
-                .bold{
-                    font-weight: bold;
-                }
-            }
-        }
-    }
+    //                     cursor: pointer;
+    //                     &:hover{
+    //                         color: black;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // .language{
+    //     .language-btn{
+    //         border: 1px solid rgb(153, 148, 148);
+    //         padding: 10px;
+    //         background-color: white;
+    //         &:hover{
+    //             background-color: #ece6e69a;
+    //         }
+    //     }
+    // }
+    // .footer-links{
+    //     ul{
+    //         display: flex;
+    //         flex-direction: column;
+    //         flex-wrap: wrap;
+    //         height: 109px;
+    //         width: 80%;
+    //         margin: 0px auto;
+    //         li{
+    //             list-style: none;
+    //             a{
+    //                 color: #007791;
+    //                 text-decoration: none;
+
+    //                 cursor: pointer;
+    //             }
+    //             .bold{
+    //                 font-weight: bold;
+    //             }
+    //         }
+    //     }
+    // }
 }

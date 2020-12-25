@@ -7,6 +7,9 @@ import signinReducer from "../containers/Home/SignInPage/module/reducer"
 import editUserReducer from '../containers/Home/UserPage/module/reducer'
 import resignCourseReducer from '../containers/Home/DetailPage/modules/resignCourseReducer'
 import cancelCourseReducer from '../containers/Home/DetailPage/modules/cancelCourseReducer'
+import usersListReducer from "../containers/Admin/Users/modules/reducer";
+import addUserAdminReducer from "../containers/Admin/AddUserPage/modules/reducer";
+
 const rootReducer = combineReducers({
     courseReducer,
     courseDetailReducer,
@@ -16,5 +19,7 @@ const rootReducer = combineReducers({
     editUserReducer,
     resignCourseReducer,
     cancelCourseReducer,
+    usersListReducer,
+    addUserAdminReducer,
 })
 export default rootReducer;

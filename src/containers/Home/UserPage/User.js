@@ -1,4 +1,4 @@
-import React, { Component , useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import { fetchUserEdit } from "./module/action";
 import { connect } from "react-redux";
@@ -6,25 +6,25 @@ import { useForm } from "react-hook-form";
 import axios from "axios"
 import { actCancelCourse } from "../DetailPage/modules/action";
 function User(props) {
-  let [ khoaHocDaDangKy , setKhoaHocDaDangKy ] = useState([])
+  let [khoaHocDaDangKy, setKhoaHocDaDangKy] = useState([])
 
   let userInformation = JSON.parse(localStorage.getItem("user"));
 
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
-    props.EditUser({...data , maLoaiNguoiDung: "HV" , maNhom: "GP01"} , props.history)
+    props.EditUser({ ...data, maLoaiNguoiDung: "HV", maNhom: "GP01" }, props.history)
   };
 
   let data = props.data;
 
-  if(data){
-    localStorage.setItem("user" , JSON.stringify({...data , accessToken: userInformation.accessToken}))
+  if (data) {
+    localStorage.setItem("user", JSON.stringify({ ...data, accessToken: userInformation.accessToken }))
     userInformation = JSON.parse(localStorage.getItem("user"));
   }
 
   useEffect(() => {
-    
+
     axios({
       url: `https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan`,
       method: "POST",
@@ -34,9 +34,9 @@ function User(props) {
       },
       headers: {
         Authorization: `Bearer ${userInformation.accessToken}`
-    },
+      },
     }).then((result) => {
-      
+
       setKhoaHocDaDangKy(result.data.chiTietKhoaHocGhiDanh)
     }).catch((error) => {
       console.log(error)
@@ -49,17 +49,17 @@ function User(props) {
     })
   }
   const renderRegisterCourses = () => {
-    if(khoaHocDaDangKy){
-      return khoaHocDaDangKy.map((khoaHoc , index) => (
+    if (khoaHocDaDangKy) {
+      return khoaHocDaDangKy.map((khoaHoc, index) => (
         <div id="userCourses" className="userCourse" key={index}>
           <h5>{khoaHoc.tenKhoaHoc}</h5>
-          
+
           <button onClick={() => { cancelCourse(khoaHoc.maKhoaHoc) }} className="btn btn-danger">Hủy</button>
         </div>
       ))
     }
   }
-  
+
   return (
     <div className="user-profile container">
       <div className="row">
@@ -151,12 +151,12 @@ function User(props) {
                       <h5 class="modal-title" id="exampleModalLabel">
                         Edit User
                       </h5>
-                      
+
                     </div>
                     <div class="modal-body">
                       <form action="" onSubmit={handleSubmit(onSubmit)}>
                         <div className="information-group-edit">
-                          
+
                           <i class="fa fa-user"></i>
                           <input
                             type="text"
@@ -173,7 +173,7 @@ function User(props) {
                           )}
                         </div>
                         <div className="information-group-edit">
-                        <i class="fa fa-envelope"></i>
+                          <i class="fa fa-envelope"></i>
                           <input
                             type="email"
                             name="email"
@@ -205,7 +205,7 @@ function User(props) {
                           )}
                         </div>
                         <div className="information-group-edit">
-                        <i class="fa fa-key"></i>
+                          <i class="fa fa-key"></i>
                           <input
                             type="text"
                             name="taiKhoan"
@@ -221,7 +221,7 @@ function User(props) {
                           )}
                         </div>
                         <div className="information-group-edit">
-                        <i class="fa fa-key"></i>
+                          <i class="fa fa-key"></i>
                           <input
                             type="password"
                             name="matKhau"
@@ -271,11 +271,11 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    EditUser: (data , history) => {
-      dispatch(fetchUserEdit(data , history));
+    EditUser: (data, history) => {
+      dispatch(fetchUserEdit(data, history));
     },
-    fetchCancelCourse: (data , history) => {
-      dispatch(actCancelCourse(data , history))
+    fetchCancelCourse: (data, history) => {
+      dispatch(actCancelCourse(data, history))
     }
   };
 };

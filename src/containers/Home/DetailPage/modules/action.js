@@ -1,6 +1,6 @@
-import { COURSE_DETAIL_REQUEST,COURSE_DETAIL_SUCESS,COURSE_DETAIL_FAILED } from "./constants"
-import { COURSES_RESIGN_REQUEST , COURSES_RESIGN_SUCCESS ,COURSES_RESIGN_FAILED } from "./constants"
-import { COURSES_CANCEL_REQUEST , COURSES_CANCEL_SUCCESS ,COURSES_CANCEL_FAILED } from "./constants"
+import { COURSE_DETAIL_REQUEST, COURSE_DETAIL_SUCESS, COURSE_DETAIL_FAILED } from "./constants"
+import { COURSES_RESIGN_REQUEST, COURSES_RESIGN_SUCCESS, COURSES_RESIGN_FAILED } from "./constants"
+import { COURSES_CANCEL_REQUEST, COURSES_CANCEL_SUCCESS, COURSES_CANCEL_FAILED } from "./constants"
 
 import axios from "axios"
 export const actFetchCourseDetail = (maKhoaHoc) => {
@@ -13,7 +13,7 @@ export const actFetchCourseDetail = (maKhoaHoc) => {
             })
             .catch((error) => {
                 dispatch(actFetchCourseDetailFailed(error))
-            })  
+            })
     }
 }
 const actFetchCourseDetailRequest = () => {
@@ -35,10 +35,10 @@ const actFetchCourseDetailFailed = (error) => {
 }
 
 
-export const actResignCourses = (data , history) => {
+export const actResignCourses = (data, history) => {
     return (dispatch) => {
         let accessToken = ''
-        if(localStorage.getItem('user')){
+        if (localStorage.getItem('user')) {
             let getItemLocalStorage = JSON.parse(localStorage.getItem('user'))
             accessToken = getItemLocalStorage.accessToken;
         }
@@ -58,7 +58,7 @@ export const actResignCourses = (data , history) => {
             })
             .catch((error) => {
                 dispatch(actResignCourseFailed(error))
-            }) 
+            })
     }
 }
 
@@ -83,11 +83,11 @@ const actResignCourseFailed = (error) => {
 export const actCancelCourse = (data) => {
     return (dispatch) => {
         let accessToken = ''
-        if(localStorage.getItem('user')){
+        if (localStorage.getItem('user')) {
             let getItemLocalStorage = JSON.parse(localStorage.getItem('user'))
             accessToken = getItemLocalStorage.accessToken;
         }
-        dispatch(actResignCourseRequest())
+        dispatch(actCancelCourseRequest())
         axios({
             url: `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/HuyGhiDanh`,
             method: "POST",
@@ -97,15 +97,15 @@ export const actCancelCourse = (data) => {
             data,
         })
             .then((result) => {
-                dispatch(actResignCourseSuccess(result.data))
+                dispatch(actCancelCourseSuccess(result.data))
                 alert('Hủy đăng ký thành công')
                 window.location.href = window.location.pathname + window.location.search + window.location.hash;
-                
+
 
             })
             .catch((error) => {
-                dispatch(actResignCourseFailed(error))
-            }) 
+                dispatch(actCancelCourseFailed(error))
+            })
     }
 }
 const actCancelCourseRequest = () => {

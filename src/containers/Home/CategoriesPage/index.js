@@ -14,7 +14,7 @@ class index extends Component {
     };
   }
   componentDidMount() {
-    let { categories } = this.props.match.params; 
+    let { categories } = this.props.match.params;
     this.props.fetchCategories(categories)
     const url = `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc`;
     axios
@@ -29,11 +29,11 @@ class index extends Component {
       });
   }
   componentDidUpdate(prevProps) {
-    if(this.props.match !== prevProps.match){
+    if (this.props.match !== prevProps.match) {
       this.props.fetchCategories(this.props.match.params.categories)
     }
   }
-  
+
   renderCourse = () => {
     let { data, searchTerm } = this.props;
     if (data) {
@@ -59,7 +59,7 @@ class index extends Component {
           this.handleClickToPush(item.maDanhMuc);
         }}
         className="dropdown-item"
-        // to={`/courses/${item.maDanhMuc}`}
+      // to={`/courses/${item.maDanhMuc}`}
       >
         {item.tenDanhMuc}
       </Link>
@@ -69,18 +69,18 @@ class index extends Component {
     console.log(this.state.categories);
     return (
       <div className="">
-      <div className="row">
-        <div className="categories col-2">
-          <Link to="/course" style={{fontWeight: "600"}} className="dropdown-item">Tất cả khỏa học</Link>
-          {this.renderCategoies()}
-        </div>
-        <div className="coursepage col-10">
+        <div className="row">
+          <div className="categories col-2">
+            <Link to="/course" style={{ fontWeight: "600" }} className="dropdown-item">Tất cả khóa học</Link>
+            {this.renderCategoies()}
+          </div>
+          <div className="coursepage col-10">
 
-          <Search />
-          <div className="row">{this.renderCourse()}</div>
+            <Search />
+            <div className="row">{this.renderCourse()}</div>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }

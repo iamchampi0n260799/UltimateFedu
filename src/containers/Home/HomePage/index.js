@@ -6,16 +6,12 @@ import { connect } from "react-redux";
 import { actionFetchCourse } from "./modules/action";
 import CourseItems from "../../../components/CourseItems";
 import Loader from "../../../components/Loader";
-import { Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import CourseCarousel from "../components/CourseCarousel";
 import Reasons from "../components/Reasons";
-import Categories from "../components/Categories";
 import Numbers from "../components/Numbers";
 import Feedback from "../components/Feedback";
 import Banner from "../components/Banner";
 import Companies from "../components/Companies";
-import Search from '../../../components/Search'
 import "./index.css";
 class index extends Component {
   componentDidMount() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { actFetchCourseDetail , actResignCourses , actCancelCourse} from "./modules/action";
+import { actFetchCourseDetail, actResignCourses } from "./modules/action";
 import { connect } from "react-redux";
 import Loader from "../../../components/Loader";
 import "./index.css"
@@ -16,8 +16,8 @@ class index extends Component {
       taiKhoan: user.taiKhoan
     }
     console.log(resignCourse)
-    this.props.fetchCourseResign(resignCourse , this.props.history)
-    
+    this.props.fetchCourseResign(resignCourse, this.props.history)
+
   }
   render() {
     const { data, loading, error } = this.props;
@@ -26,13 +26,13 @@ class index extends Component {
     }
     return (
       <div className="detail">
-        <section className="introduction">  
+        <section className="introduction">
           <div className="introduction-content">
             <div className="topic mb-3">
               <h6>Business &gt; Strategy &gt; Digital Marketing</h6>
             </div>
             <div className="header mb-3">
-                {data && <h1>{data.tenKhoaHoc || "No name"}</h1>}
+              {data && <h1>{data.tenKhoaHoc || "No name"}</h1>}
             </div>
             <div className="lead-header mb-3">
               {data && data.moTa}
@@ -47,8 +47,8 @@ class index extends Component {
               <i className="fa fa-star" />
               <i className="fa fa-star" />
               <i className="fa fa-star" />
-                {data && <span>({data.luotXem} ratings) {data.soLuongHocVien} students</span>}
-              
+              {data && <span>({data.luotXem} ratings) {data.soLuongHocVien} students</span>}
+
             </div>
             <div className="intructor mb-3">
               <span>Created by</span>
@@ -70,7 +70,7 @@ class index extends Component {
         <section className="sidebar">
           <div className="sidebar-content">
             <div className="preview mb-3">
-                {data && <img src={data.hinhAnh} />}
+              {data && <img src={data.hinhAnh} />}
             </div>
           </div>
           <div className="price mb-3 pl-3">
@@ -456,10 +456,10 @@ const mapDispatchToProps = (dispatch) => {
     fetchCourseDetail: (id) => {
       dispatch(actFetchCourseDetail(id));
     },
-    fetchCourseResign: (data , history) => {
-      dispatch(actResignCourses(data , history))
+    fetchCourseResign: (data, history) => {
+      dispatch(actResignCourses(data, history))
     },
-    
+
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(index);

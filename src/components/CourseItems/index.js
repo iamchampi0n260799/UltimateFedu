@@ -5,10 +5,10 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
+// import Paper from "@material-ui/core/Paper";
+// import Grid from "@material-ui/core/Grid";
 import { withRouter } from "react-router";
 import "./index.css";
 const useStyles = makeStyles({
@@ -19,7 +19,8 @@ const useStyles = makeStyles({
 
 function CourseItems(props) {
   const classes = useStyles();
-  const { hinhAnh, tenKhoaHoc, moTa, maKhoaHoc } = props.course;
+  // const { hinhAnh, tenKhoaHoc, moTa, maKhoaHoc } = props.course;
+  const { hinhAnh, tenKhoaHoc, maKhoaHoc } = props.course;
   return (
     <Card
       onClick={() => {
@@ -46,18 +47,18 @@ function CourseItems(props) {
           <h5>Angular - The Complete Guide (2020)</h5>
           <span>Maximilian Schwarzmüller</span>
         </div>
-        <div class="card-rating">
+        <div className="card-rating">
           <span>4.6 </span>
           <span>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
           </span>
           <span> (131,482)</span>
         </div>
-        <div class="card-price">
+        <div className="card-price">
           <span style={{ fontWeight: "bold" }}>$11,99 </span>
           <span>$129,99</span>
         </div>
@@ -70,7 +71,7 @@ function CourseItems(props) {
           Detail
         </button>
       </CardActions>
-      
+
     </Card>
   );
 }

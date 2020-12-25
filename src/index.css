@@ -5,3 +5,50 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* SCROLL TOP */
+button.scrollTop {
+    background: #06c1d4;
+    color: #ffffff;
+    font-size: 24px;
+    height: 40px;
+    line-height: 37px;
+    text-align: center;
+    width: 40px;
+    border-radius: 4px;
+    -webkit-transition-duration: 500ms;
+    position: fixed;
+    transition-duration: 500ms;
+    border: none;
+    bottom: 1000px;
+    right: 30px;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    z-index: 99;
+}
+button.scrollTop.active {
+    bottom: 30px;
+    opacity: 1;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    border: 5px solid #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #06c1d4;
+    border-radius: 3px;
+    z-index: 100;
+}
+.group-start-review {
+    text-align: center;
+}
+.group-start-review p {
+    color: #353b48b4;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
