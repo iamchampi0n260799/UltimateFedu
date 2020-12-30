@@ -5,7 +5,8 @@ export const actionFetchUsersList = (paramsString) => {
     return (dispatch) => {
         dispatch(actionFetchUsersListRequest());
         // MaNhom=GP01&page=1&pageSize=10
-        API(`QuanLyNguoiDung/LayDanhSachNguoiDung_PhanTrang?${paramsString}`, "GET", null)
+        // API(`QuanLyNguoiDung/LayDanhSachNguoiDung_PhanTrang?${paramsString}`, "GET", null)
+        API(`QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=${paramsString}`, "GET", null)
             .then((result) => {
                 dispatch(actionFetchUsersListSuccess(result.data));
             })

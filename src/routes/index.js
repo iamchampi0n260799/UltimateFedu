@@ -50,6 +50,16 @@ export const routesAdmin = [
         exact: true
     },
     {
+        path: "/admin/users/edit",
+        component: AddUserPage,
+        exact: true
+    },
+    {
+        path: "/admin/users/delete",
+        component: AddUserPage,
+        exact: true
+    },
+    {
         path: "/admin/courses",
         component: CoursesAdmin,
         exact: false
