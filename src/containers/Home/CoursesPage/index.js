@@ -6,6 +6,7 @@ import CourseItems from "../../../components/CourseItems";
 import Search from "../../../components/Search";
 import { actionFetchCourse } from "./modules/action";
 import "./index.css";
+
 class Courses extends Component {
   constructor(props) {
     super(props);
@@ -55,7 +56,7 @@ class Courses extends Component {
           this.handleClickToPush(item.maDanhMuc);
         }}
         className="dropdown-item"
-        // to={`/courses/${item.maDanhMuc}`}
+      // to={`/courses/${item.maDanhMuc}`}
       >
         {item.tenDanhMuc}
       </Link>
@@ -66,7 +67,7 @@ class Courses extends Component {
       <div className="">
         <div className="row">
           <div className="categories col-2">
-          <Link to="/course" style={{fontWeight: "600"}} className="dropdown-item">Tất cả khỏa học</Link>
+            <Link to="/course" style={{ fontWeight: "600" }} className="dropdown-item">Tất cả khỏa học</Link>
             {this.renderCategoies()}
           </div>
           <div className="coursepage col-10">

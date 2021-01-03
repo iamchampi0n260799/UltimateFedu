@@ -1,4 +1,4 @@
-// import Home from '../containers/Home/HomePage'
+// import Home from '../containers/Home/HomePage';
 // import DetailCoursePage from '../containers/Home/DetailPage'
 // import CategoriesPage from '../containers/Home/CategoriesPage'
 // import SignUp from '../containers/Home/SignUpPage/Signup'

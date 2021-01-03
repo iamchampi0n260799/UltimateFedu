@@ -3,7 +3,6 @@ import "../../../../styles/sass/main.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import FeedbackItem from "../FeedbackItem";
 
 export default class Feedback extends Component {
   constructor(props) {
@@ -111,8 +110,8 @@ export default class Feedback extends Component {
 
 
       <section className="feedback">
-        <div className="headerBorderTop" />
-        <div className="your-class2 feedback-content">
+        {/* <div className="headerBorderTop" /> */}
+        <div className="feedback-content container">
           <Slider {...settings}>
             <div className="feedback-items">
               <span>
@@ -228,18 +227,8 @@ export default class Feedback extends Component {
                 and thanks to CyberSoft, I'm really close.
             </p>
             </div>
-
           </Slider>
-
         </div>
-        <button
-          className="slick-next slick-arrow"
-          aria-label="Next"
-          type="button"
-          style={{ color: "red" }}
-        >
-          Next
-        </button>
       </section>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {COURSES_SEARCH} from '../../containers/Home/HomePage/modules/constant'
+import { COURSES_SEARCH } from '../../components/CoursesList/modules/constant';
+
 class Search extends Component {
   // handleSearch = (e) => {
   //   this.props.search(e.target.value);
@@ -18,6 +19,7 @@ class Search extends Component {
     );
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     getKeyWord: (keyword) => {
@@ -29,4 +31,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null , mapDispatchToProps)(Search);
+export default connect(null, mapDispatchToProps)(Search);
