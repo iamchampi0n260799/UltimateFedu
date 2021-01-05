@@ -1,4 +1,4 @@
-import { CATEGORIES_REQUEST, CATEGORIES_SUCESS , CATEGORIES_FAILED } from "./constants"
+import { CATEGORIES_REQUEST, CATEGORIES_SUCCESS, CATEGORIES_FAILED } from "./constants";
 
 let initialState = {
   loading: false,
@@ -14,20 +14,24 @@ const categoriesReducer = (state = initialState, action) => {
       state.error = null;
       return { ...state };
     }
-    case CATEGORIES_SUCESS: {
+
+    case CATEGORIES_SUCCESS: {
       state.loading = false;
       state.data = action.payload;
       state.error = null;
       return { ...state };
     }
+
     case CATEGORIES_FAILED: {
       state.loading = false;
       state.data = null;
       state.error = action.payload;
       return { ...state };
     }
+
     default:
       return { ...state };
   }
 };
+
 export default categoriesReducer;

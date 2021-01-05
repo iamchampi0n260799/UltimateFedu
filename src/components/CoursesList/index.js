@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { actionFetchCourse } from "./modules/action";
 import CourseItems from "../../components/CourseItems";
 import Loader from "../../components/Loader";
+import "./index.css";
 
 class CoursesList extends Component {
     componentDidMount() {
@@ -44,7 +45,7 @@ class CoursesList extends Component {
 
         return (
             <section className="coursesContent">
-                <h2>Các khóa học tiêu biểu:</h2>
+                <h2>Các Khóa Học Tiêu Biểu</h2>
                 <Slider {...settings}>
                     {this.renderCourse()}
                 </Slider>

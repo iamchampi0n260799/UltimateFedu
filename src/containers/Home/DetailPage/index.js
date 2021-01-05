@@ -2,28 +2,32 @@ import React, { Component } from "react";
 import { actFetchCourseDetail, actResignCourses } from "./modules/action";
 import { connect } from "react-redux";
 import Loader from "../../../components/Loader";
-import "./index.css"
+import "./index.css";
+
 class index extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.fetchCourseDetail(id);
-  }
+  };
+
   dangKyKhoaHoc = () => {
     const { data } = this.props;
-    const user = JSON.parse(localStorage.getItem("user"))
+    const user = JSON.parse(localStorage.getItem("user"));
     const resignCourse = {
       maKhoaHoc: data.maKhoaHoc,
       taiKhoan: user.taiKhoan
     }
-    console.log(resignCourse)
-    this.props.fetchCourseResign(resignCourse, this.props.history)
 
-  }
+    // console.log(resignCourse);
+    this.props.fetchCourseResign(resignCourse, this.props.history);
+  };
+
   render() {
     const { data, loading, error } = this.props;
     if (loading) {
       return <Loader />;
     }
+
     return (
       <div className="detail">
         <section className="introduction">
@@ -444,6 +448,7 @@ class index extends Component {
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     loading: state.courseDetailReducer.loading,
@@ -451,6 +456,7 @@ const mapStateToProps = (state) => {
     error: state.courseDetailReducer.error,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchCourseDetail: (id) => {
@@ -462,4 +468,5 @@ const mapDispatchToProps = (dispatch) => {
 
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(index);

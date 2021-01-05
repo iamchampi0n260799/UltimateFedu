@@ -1,40 +1,34 @@
-import { CATEGORIES_REQUEST, CATEGORIES_SUCESS , CATEGORIES_FAILED } from "./constants"
-import axios from "axios"
-export const actFetchCategories = (categories) => {
+import { CATEGORIES_REQUEST, CATEGORIES_SUCCESS, CATEGORIES_FAILED } from "./constants";
+import API from "../../../api";
+
+export const actFetchCategories = () => {
     // API
     return (dispatch) => {
         dispatch(actFetchCategoriesRequest())
 
-
-        const url = `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${categories}&MaNhom=GP01`
-        axios.get(url)
+        API(`/QuanLyKhoaHoc/LayDanhMucKhoaHoc`, "GET")
             .then((result) => {
-                dispatch(actFetchCategoriesSucess(result.data))
+                dispatch(actFetchCategoriesSuccess(result.data))
             })
             .catch((error) => {
                 dispatch(actFetchCategoriesFailed(error))
             })
-        
     }
 }
-
-
-
-
-
-
 
 const actFetchCategoriesRequest = () => {
     return {
         type: CATEGORIES_REQUEST
     }
 }
-const actFetchCategoriesSucess = (data) => {
+
+const actFetchCategoriesSuccess = (data) => {
     return {
-        type: CATEGORIES_SUCESS,
+        type: CATEGORIES_SUCCESS,
         payload: data
     }
 }
+
 const actFetchCategoriesFailed = (error) => {
     return {
         type: CATEGORIES_FAILED,

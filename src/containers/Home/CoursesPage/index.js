@@ -1,85 +1,69 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import CourseItems from "../../../components/CourseItems";
 import Search from "../../../components/Search";
-import { actionFetchCourse } from "./modules/action";
-import "./index.css";
+// import "./index.scss";
+import "../../../styles/sass/main.scss";
+import CategoriesList from "../../../components/CategoriesList";
+import Loader from '../../../components/Loader';
+import { actionFetchCourse, actionFetchCoursesByCategory } from "./modules/action";
 
-class Courses extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: [],
-    };
-  }
+class CoursesPage extends Component {
+
   componentDidMount() {
     this.props.getCourse();
-    const url = `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc`;
-    axios
-      .get(url)
-      .then((result) => {
-        this.setState({
-          categories: result.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  }
+
+  handleGetCategory = (category) => {
+    console.log("coursePage===========", category);
+    if (category) {
+      this.props.getCoursesByCategory(category)
+    } else {
+      this.props.getCourse(category)
+    }
+
   }
 
   renderCourse = () => {
     let { data, searchTerm } = this.props;
     let timkiem = searchTerm;
+
     if (data) {
       data = data.filter((data) => {
         return (
           data.tenKhoaHoc.toLowerCase().indexOf(timkiem.toLowerCase()) !== -1
         );
       });
-      return data.map((course, index) => (
-        <CourseItems key={index} course={course} />
+
+      return data.map((course) => (
+        <div className="col-3" key={course.maKhoaHoc}>
+          <CourseItems course={course} />
+        </div>
       ));
     }
   };
 
-  handleClickToPush = (maDanhMuc) => {
-    this.props.history.push(`/categories/${maDanhMuc}`);
-  };
-  renderCategoies = () => {
-    return this.state.categories.map((item, index) => (
-      <Link
-        style={{ cursor: "pointer" }}
-        key={index}
-        onClick={() => {
-          this.handleClickToPush(item.maDanhMuc);
-        }}
-        className="dropdown-item"
-      // to={`/courses/${item.maDanhMuc}`}
-      >
-        {item.tenDanhMuc}
-      </Link>
-    ));
-  };
   render() {
+    if (this.props.loading) return <Loader />;
     return (
-      <div className="">
-        <div className="row">
-          <div className="categories col-2">
-            <Link to="/course" style={{ fontWeight: "600" }} className="dropdown-item">Tất cả khỏa học</Link>
-            {this.renderCategoies()}
-          </div>
-          <div className="coursepage col-10">
-
-            <Search />
-            <div className="row">{this.renderCourse()}</div>
+      <section className="coursesPage">
+        <div className="coursesPage__content">
+          <div className="row">
+            {/* <CategoriesList history={this.props.history} getCategory={this.handleGetCategory} /> */}
+            <CategoriesList getCategory={this.handleGetCategory} />
+            <div className="coursesPage__right col-10">
+              <Search />
+              <div className="row">
+                {this.renderCourse()}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     loading: state.courseReducer.loading,
@@ -88,11 +72,16 @@ const mapStateToProps = (state) => {
     searchTerm: state.courseReducer.searchTerm,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     getCourse: () => {
       dispatch(actionFetchCourse());
     },
+    getCoursesByCategory: (category) => {
+      dispatch(actionFetchCoursesByCategory(category));
+    }
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Courses);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);

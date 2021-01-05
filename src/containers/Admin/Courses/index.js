@@ -42,17 +42,17 @@ export default function Courses(props) {
     };
     console.log(courses)
     let accessToken = ''
-        if(localStorage.getItem('user')){
-            let getItemLocalStorage = JSON.parse(localStorage.getItem('user'))
-            accessToken = getItemLocalStorage.accessToken;
-        }
-      axios({
-      url: `http://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/ThemKhoaHoc`,
+    if (localStorage.getItem('user')) {
+      let getItemLocalStorage = JSON.parse(localStorage.getItem('user'))
+      accessToken = getItemLocalStorage.accessToken;
+    }
+    axios({
+      url: `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/ThemKhoaHoc`,
       method: "POST",
       data: courses,
       headers: {
         Authorization: `Bearer ${accessToken}`
-    },
+      },
     }).then((result) => {
       console.log('Success')
       console.log(result.data)
@@ -163,15 +163,15 @@ export default function Courses(props) {
                   <div>
                     <input ref={register({
                       required: " Required",
-                    })} 
-                    name="hinhAnh"
-                    type="file" 
-                    onChange={previewFile} />
+                    })}
+                      name="hinhAnh"
+                      type="file"
+                      onChange={previewFile} />
                     <br />
                     <img src="" width="100%" height="100%" alt="Image preview..."></img>
                   </div>
 
-                  
+
                 </div>
                 <p>Mã danh mục khóa học</p>
                 <div className="form-group">

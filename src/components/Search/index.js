@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import { COURSES_SEARCH } from '../../components/CoursesList/modules/constant';
 
 class Search extends Component {
-  // handleSearch = (e) => {
-  //   this.props.search(e.target.value);
-  // };
   render() {
     return (
       <input

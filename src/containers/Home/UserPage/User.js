@@ -87,8 +87,7 @@ function User(props) {
         <div className="col-8">
           <div className="p-3 fancy" style={{ backgroundColor: "orange" }}>
             <p className="text-center text-light">
-              Cuộc sống thật là vui khi làm wjbu và hãy luôn tự hào vì mình là 1
-              thằng wjbu
+              Cuộc sống thật là vui!
             </p>
           </div>
           <div id="userProfile" className="profile">

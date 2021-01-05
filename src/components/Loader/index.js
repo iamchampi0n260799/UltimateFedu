@@ -3,9 +3,6 @@ import './index.css'
 
 export default function Loader() {
     return (
-        // <div className="loader">
-
-        // </div>
         <div className="group-loading">
             <div className="sk-cube-grid">
                 <div className="sk-cube sk-cube1"></div>

@@ -1,33 +1,49 @@
 import { COURSES_REQUEST, COURSES_SUCCESS, COURSES_FAILED } from "./constant";
-import Axios from "axios";
-// nhớ sữa tên TYPE với tên hàm tên biến
+import API from "../../../../api/index";
+
 export const actionFetchCourse = () => {
   // API
   return (dispatch) => {
     dispatch(actionFetchCourseRequest());
-    Axios({
-      url: `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01`,
-      method: "GET",
-    })
+
+    API(`/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01`, "GET", null)
       .then((result) => {
-        dispatch(actionFetchCourseSucess(result.data));
+        dispatch(actionFetchCourseSuccess(result.data));
       })
       .catch((error) => {
         dispatch(actionFetchCourseFailed(error));
       });
   };
 };
+
+export const actionFetchCoursesByCategory = (category) => {
+  // API
+  return (dispatch) => {
+    dispatch(actionFetchCourseRequest());
+
+    API(`/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${category}&MaNhom=GP01`, "GET", null)
+      .then((result) => {
+        dispatch(actionFetchCourseSuccess(result.data));
+      })
+      .catch((error) => {
+        dispatch(actionFetchCourseFailed(error));
+      });
+  };
+};
+
 const actionFetchCourseRequest = () => {
   return {
     type: COURSES_REQUEST,
   };
 };
-const actionFetchCourseSucess = (data) => {
+
+const actionFetchCourseSuccess = (data) => {
   return {
     type: COURSES_SUCCESS,
     payload: data,
   };
 };
+
 const actionFetchCourseFailed = (error) => {
   return {
     type: COURSES_FAILED,

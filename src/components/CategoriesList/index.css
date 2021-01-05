@@ -1,0 +1,14 @@
+.categories {
+    border: 0.5px solid #dcdcdc;
+    border-radius: 4px;
+    height: fit-content;
+    width: 250px;
+    padding: 10px;
+    /* margin-top: 163px; */
+    /* position: relative; */
+    /* margin: 30px; */
+}
+
+.dropdown-item {
+    margin-bottom: 10px;
+}

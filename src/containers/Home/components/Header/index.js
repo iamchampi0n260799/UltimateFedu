@@ -1,65 +1,66 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import axios from "axios";
+// import axios from "axios";
 import "../../../../styles/sass/main.scss";
 import { Link } from "react-router-dom";
-//
 
-class index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: [],
-    };
-  }
-  componentDidMount() {
-    const url = `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc`;
-    axios
-      .get(url)
-      .then((result) => {
-        this.setState({
-          categories: result.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-  handleClickToPush = (maDanhMuc) => {
-    this.props.history.push(`/categories/${maDanhMuc}`);
-  };
-  renderCategoies = () => {
-    return this.state.categories.map((item, index) => (
-      <Link
-        style={{ cursor: "pointer" }}
-        key={index}
-        onClick={() => {
-          this.handleClickToPush(item.maDanhMuc);
-        }}
-        className="dropdown-item"
-        to={`/courses/${item.maDanhMuc}`}
-      >
-        {item.tenDanhMuc}
-      </Link>
-    ));
-  };
+class Header extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     categories: [],
+  //   };
+  // }
+  // componentDidMount() {
+  //   const url = `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc`;
+  //   axios
+  //     .get(url)
+  //     .then((result) => {
+  //       this.setState({
+  //         categories: result.data,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }
+  // handleClickToPush = (maDanhMuc) => {
+  //   this.props.history.push(`/categories/${maDanhMuc}`);
+  // };
+
+  // renderCategoies = () => {
+  //   return this.state.categories.map((item, index) => (
+  //     <Link
+  //       style={{ cursor: "pointer" }}
+  //       key={index}
+  //       onClick={() => {
+  //         this.handleClickToPush(item.maDanhMuc);
+  //       }}
+  //       className="dropdown-item"
+  //       to={`/courses/${item.maDanhMuc}`}
+  //     >
+  //       {item.tenDanhMuc}
+  //     </Link>
+  //   ));
+  // };
+
   shortUserName = (userName) => {
-    
     let splitNameToArray = userName.split(" ");
     let result = "";
+
     for (let i = 0; i <= splitNameToArray.length - 1; i++) {
       result += splitNameToArray[i].charAt(0).toUpperCase();
     }
 
-    return result
+    return result;
   };
   render() {
     const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user);
+
     return (
       <header className="header__home">
         {/* fixed-top */}
-        <nav className="navbar navbar-expand-lg  header__content">
+        <nav className="navbar navbar-expand-lg  header__content ">
           <div className="col-sm-6">
             <div className="header__left">
               <Link className="navbar-brand" to="/">
@@ -98,15 +99,6 @@ class index extends Component {
                     <Link className="nav-link" to="/course">
                       CÁC KHÓA HỌC
                     </Link>
-                    <div className="dropdown-menu">
-                      {/* <a className="dropdown-item" href="#">Lập Trình Tư Duy</a>
-                      <a className="dropdown-item" href="#">Lập Trình Front End</a>
-                      <a className="dropdown-item" href="#">Lập Trình Back End</a>
-                      <a className="dropdown-item" href="#">Lập Trình Di Động</a>
-                      <a className="dropdown-item" href="#">Lập Trình Full Stack</a>
-                      <a className="dropdown-item" href="#">Thiết Kế Web</a> */}
-                      {/* {this.renderCategoies()} */}
-                    </div>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="#">
@@ -128,12 +120,12 @@ class index extends Component {
                       <Link className="nav-link logoUser" to="/user">
                         {this.shortUserName(user.hoTen)}
                       </Link>
-                      
+
                     ) : (
-                      <Link className="nav-link" to="/signin">
-                        ĐĂNG NHẬP
-                      </Link>
-                    )}
+                        <Link className="nav-link" to="/signin">
+                          ĐĂNG NHẬP
+                        </Link>
+                      )}
                   </li>
                 </ul>
               </div>
@@ -144,4 +136,5 @@ class index extends Component {
     );
   }
 }
-export default withRouter(index);
+
+export default withRouter(Header);
